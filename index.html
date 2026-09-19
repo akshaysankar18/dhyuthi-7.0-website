@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhyuthi 7.0 — Step into the Light | IEEE SCT SB Flagship Tech Festival</title>
+  <meta name="description"
+    content="Official website for Dhyuthi 7.0, the flagship technical and cultural festival of IEEE SCT Student Branch, SCTCE Trivandrum. October 2026. Explore tracks, pre-events, workshops, schedule, passes, and registrations.">
+  <meta name="keywords"
+    content="Dhyuthi 7.0, Dhyuthi, IEEE SCT SB, SCTCE Trivandrum, IEEE SCT SB, SCTCE Trivandrum, Kerala Tech Fest, AIGENIX, CELLESTRO, INCEPTA, SYNKRON, Trail Quest 7.0, Hackathon">
+  <meta name="theme-color" content="#050504">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dhyuthi 7.0 — Step into the light. Make your mark.">
+  <meta property="og:description"
+    content="The premier tech & cultural symposium by IEEE SCT SB. Hands-on workshops, ₹2L+ prizes, KTU activity points, and pre-event challenges.">
+  <meta property="og:image" content="assets/images/poster-trailquest.jpg">
+
+  <!-- Google Fonts: Cinzel, Cinzel Decorative, Share Tech Mono, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+
+  <!-- Design System & Modular Component CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components/intro.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/countdown.css">
+  <link rel="stylesheet" href="css/components/ticker.css">
+  <link rel="stylesheet" href="css/components/pre-events.css">
+  <link rel="stylesheet" href="css/components/tracks.css">
+  <link rel="stylesheet" href="css/components/schedule.css">
+  <link rel="stylesheet" href="css/components/gallery.css">
+  <link rel="stylesheet" href="css/components/tickets.css">
+  <link rel="stylesheet" href="css/components/faq-venue.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/components/metrics-pronite.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/dhyuthi-logo.svg">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       DHYUTHI 7.0 — TATHVA-INSPIRED CHRONOMETER INTRO
+       Minimalist, Precision Astrolabe Gyroscope & SVG Arc Progress
+       Zero boring text, high-tech, pure festival identity.
+       ========================================================================== -->
+  <div class="tathva-intro-overlay" id="dyuthiIntroOverlay" aria-hidden="false">
+    <div class="tathva-intro-ambient"></div>
+    <div class="tathva-intro-grid"></div>
+
+    <button class="tathva-skip-btn" id="introSkipBtn" aria-label="Skip Intro Animation">
+      Skip <span class="tathva-kbd-badge">ESC</span>
+    </button>
+
+    <div class="tathva-chronometer-wrap">
+      <!-- Gyroscopic Concentric Astrolabe Rings -->
+      <div class="tathva-gyro-assembly">
+        <div class="tathva-ring tathva-ring-outer"></div>
+        <div class="tathva-ring tathva-ring-mid"></div>
+        <div class="tathva-ring tathva-ring-inner"></div>
+
+        <!-- SVG High-Precision Progress Arc -->
+        <svg viewBox="0 0 100 100" class="tathva-progress-svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" stroke-width="1.2" fill="none" class="tathva-track-circle" />
+          <circle cx="50" cy="50" r="46" stroke-width="2" fill="none" stroke-linecap="round"
+            transform="rotate(-90 50 50)" id="tathvaProgressCircle" class="tathva-progress-stroke" />
+        </svg>
+
+        <!-- Center Glowing Dhyuthi Logo Emblem -->
+        <div class="tathva-center-emblem">
+          <img src="assets/icons/dhyuthi-logo.svg" alt="Dhyuthi 7.0 Logo" class="tathva-logo-img">
+        </div>
+
+        <!-- Radial Shockwave Detonation -->
+        <div class="tathva-shockwave" id="introFlareShockwave"></div>
+      </div>
+
+      <!-- Minimalist Precision Typography: Monumental Golden Text -->
+      <div class="tathva-title-box">
+        <div class="tathva-brand-title">DHYUTHI 7.0</div>
+        <div class="tathva-title-prism" aria-hidden="true">
+          <span class="prism-arc"></span>
+          <span class="prism-spark"></span>
+        </div>
+        <div class="tathva-telemetry-row">
+          <span class="tathva-coord-tag">IEEE SCT SB</span>
+          <span class="tathva-pct-val" id="introProgressPct">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-viewport Fixed Cosmic Particles Canvas -->
+  <canvas id="bgParticleCanvas" class="fixed-canvas-bg" aria-hidden="true"></canvas>
+
+  <!-- ==========================================================================
+       SITE HEADER & DUAL-PILL NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-link" aria-label="Dhyuthi 7.0 Home">
+        <div class="brand-emblem">
+          <img src="assets/icons/dhyuthi-logo.svg" alt="Dhyuthi 7.0 Light Flame Emblem" width="42" height="42">
+        </div>
+        <div class="brand-meta">
+          <div class="brand-title">
+            DHYUTHI <span class="version">7.0</span>
+          </div>
+          <span class="brand-tagline">CREATE • INSPIRE • INNOVATE</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Pill -->
+      <nav aria-label="Main Navigation">
+        <ul class="primary-nav-pill">
+          <li><a href="#hero" class="nav-item-link active">Home</a></li>
+          <li><a href="#about" class="nav-item-link">About</a></li>
+          <li><a href="#tracks" class="nav-item-link">Tracks</a></li>
+          <li><a href="#schedule" class="nav-item-link">Schedule</a></li>
+          <li><a href="#gallery" class="nav-item-link">Gallery</a></li>
+          <li><a href="#preevents" class="nav-item-link">Pre-events</a></li>
+          <li><a href="#tickets" class="nav-item-link">Passes</a></li>
+          <li><a href="#faqs" class="nav-item-link">FAQs</a></li>
+          <li><a href="#venue" class="nav-item-link">Venue</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <button class="replay-intro-btn" data-action="replay-intro" title="Replay Dhyuthi 7.0 Intro"
+          aria-label="Replay Intro">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          Intro
+        </button>
+
+        <a href="#tickets" class="btn btn-gold header-register-btn" id="headerRegisterCta">
+          Register Now
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Backdrop -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="brand-link" style="margin-bottom: 2.5rem;">
+        <div class="brand-emblem">
+          <img src="assets/icons/dhyuthi-logo.svg" alt="Dhyuthi 7.0 Logo" width="38" height="38">
+        </div>
+        <div class="brand-meta">
+          <div class="brand-title">DHYUTHI <span class="version">7.0</span></div>
+          <span class="brand-tagline">CREATE • INSPIRE • INNOVATE</span>
+        </div>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About Dhyuthi</a></li>
+        <li><a href="#tracks" class="mobile-nav-link">Tracks & Workshops</a></li>
+        <li><a href="#preevents" class="mobile-nav-link">Pre-Events Showcase</a></li>
+        <li><a href="#schedule" class="mobile-nav-link">3-Day Schedule</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Event Gallery</a></li>
+        <li><a href="#tickets" class="mobile-nav-link">Passes & Pricing</a></li>
+        <li><a href="#faqs" class="mobile-nav-link">FAQs</a></li>
+        <li><a href="#venue" class="mobile-nav-link">Venue & Transit</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="#tickets" class="btn btn-gold" style="width: 100%;">
+        Register for Dhyuthi 7.0
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION: MONUMENTAL CENTERPIECE STAGE
+         Inspired by 11:11 Chapter 2 Luxury Obsidian & Molten Gold Centerpiece
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-ambient-glow"></div>
+
+      <div class="container hero-content">
+
+        <!-- Presenter Brand Row -->
+        <div class="hero-presenter-row">
+          <img src="assets/icons/ieee-sctsb-logo.svg" alt="IEEE SCT SB Emblem" class="hero-presenter-logo" width="130"
+            height="42">
+          <div class="hero-dot-separator"></div>
+          <img src="assets/icons/ieee-logo.svg" alt="IEEE Global Emblem" class="hero-presenter-logo" width="110"
+            height="38">
+        </div>
+
+        <div class="hero-eyebrow">IEEE SCT STUDENT BRANCH PRESENTS</div>
+
+        <!-- Monumental Title: DHYUTHI 7.0 -->
+        <div class="hero-title-wrapper">
+          <div class="hero-title-beam"></div>
+          <h1 class="hero-monumental-title">
+            DHYUTHI <span class="version-chip">7.0</span>
+          </h1>
+
+          <!-- Dhyuthi Solar Prism & Photonic Horizon Emitter -->
+          <svg viewBox="0 0 800 90" class="hero-solar-horizon" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <defs>
+              <linearGradient id="dyuthiHorizonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#d4af37" stop-opacity="0" />
+                <stop offset="20%" stop-color="#8c6f3d" stop-opacity="0.3" />
+                <stop offset="45%" stop-color="#fce8be" stop-opacity="0.95" />
+                <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+                <stop offset="55%" stop-color="#fce8be" stop-opacity="0.95" />
+                <stop offset="80%" stop-color="#8c6f3d" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#d4af37" stop-opacity="0" />
+              </linearGradient>
+              <radialGradient id="solarPrismCore" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="30%" stop-color="#f7dc8d" stop-opacity="0.95" />
+                <stop offset="70%" stop-color="#d4af37" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#8c6f3d" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <!-- Concentric Photonic Horizon Arc -->
+            <path d="M 40 68 Q 400 32 760 68" stroke="url(#dyuthiHorizonGrad)" stroke-width="1.8" />
+            <path d="M 120 72 Q 400 44 680 72" stroke="#8c6f3d" stroke-width="0.8" stroke-dasharray="6 8"
+              opacity="0.45" />
+
+            <!-- Radiant Photonic Rays from Center -->
+            <line x1="400" y1="36" x2="330" y2="12" stroke="url(#dyuthiHorizonGrad)" stroke-width="0.75"
+              opacity="0.6" />
+            <line x1="400" y1="36" x2="360" y2="8" stroke="url(#dyuthiHorizonGrad)" stroke-width="0.9" opacity="0.7" />
+            <line x1="400" y1="36" x2="400" y2="4" stroke="#ffffff" stroke-width="1.2" opacity="0.85" />
+            <line x1="400" y1="36" x2="440" y2="8" stroke="url(#dyuthiHorizonGrad)" stroke-width="0.9" opacity="0.7" />
+            <line x1="400" y1="36" x2="470" y2="12" stroke="url(#dyuthiHorizonGrad)" stroke-width="0.75"
+              opacity="0.6" />
+
+            <!-- Primary Solar Datum Baseline -->
+            <line x1="60" y1="68" x2="740" y2="68" stroke="url(#dyuthiHorizonGrad)" stroke-width="1" opacity="0.6" />
+
+            <!-- Astrolabe Solar Flame Diamond Core -->
+            <circle cx="400" cy="36" r="22" fill="url(#solarPrismCore)" opacity="0.9" />
+            <polygon points="400,20 409,36 400,52 391,36" fill="#ffffff" filter="drop-shadow(0 0 8px #fce8be)" />
+            <circle cx="400" cy="36" r="2.5" fill="#1c160e" />
+
+            <!-- Celestial Coordinates Tick marks -->
+            <circle cx="280" cy="54" r="2.5" fill="#f3d38c" opacity="0.8" />
+            <circle cx="520" cy="54" r="2.5" fill="#f3d38c" opacity="0.8" />
+          </svg>
+        </div>
+
+        <div class="hero-tagline">STEP INTO THE LIGHT • MAKE YOUR MARK</div>
+        <div class="hero-subtagline">OCTOBER 23 – 25, 2026 • SCT COLLEGE OF ENGINEERING, TRIVANDRUM</div>
+
+        <!-- ==========================================================================
+             DHYUTHI 7.0 SOLAR CHRONOMETER (LIVE FESTIVAL COUNTDOWN)
+             ========================================================================== -->
+        <div class="hero-countdown-container" id="heroCountdown" aria-label="Festival Countdown Timer">
+          <div class="countdown-badge">
+            <span class="countdown-beacon-dot"></span>
+            <span class="countdown-badge-text">T-MINUS FESTIVAL IGNITION</span>
+            <span class="countdown-badge-separator">•</span>
+            <span class="countdown-badge-date">OCT 23, 2026</span>
+          </div>
+
+          <div class="countdown-grid" role="timer" aria-live="polite">
+            <!-- Days -->
+            <div class="countdown-card">
+              <div class="countdown-card-inner">
+                <span class="countdown-corner-bracket tl"></span>
+                <span class="countdown-corner-bracket tr"></span>
+                <span class="countdown-corner-bracket bl"></span>
+                <span class="countdown-corner-bracket br"></span>
+                <div class="countdown-value-wrap">
+                  <span class="countdown-number" id="countdownDays">00</span>
+                </div>
+                <span class="countdown-label">DAYS</span>
+              </div>
+            </div>
+
+            <div class="countdown-divider" aria-hidden="true">:</div>
+
+            <!-- Hours -->
+            <div class="countdown-card">
+              <div class="countdown-card-inner">
+                <span class="countdown-corner-bracket tl"></span>
+                <span class="countdown-corner-bracket tr"></span>
+                <span class="countdown-corner-bracket bl"></span>
+                <span class="countdown-corner-bracket br"></span>
+                <div class="countdown-value-wrap">
+                  <span class="countdown-number" id="countdownHours">00</span>
+                </div>
+                <span class="countdown-label">HOURS</span>
+              </div>
+            </div>
+
+            <div class="countdown-divider" aria-hidden="true">:</div>
+
+            <!-- Minutes -->
+            <div class="countdown-card">
+              <div class="countdown-card-inner">
+                <span class="countdown-corner-bracket tl"></span>
+                <span class="countdown-corner-bracket tr"></span>
+                <span class="countdown-corner-bracket bl"></span>
+                <span class="countdown-corner-bracket br"></span>
+                <div class="countdown-value-wrap">
+                  <span class="countdown-number" id="countdownMinutes">00</span>
+                </div>
+                <span class="countdown-label">MINUTES</span>
+              </div>
+            </div>
+
+            <div class="countdown-divider" aria-hidden="true">:</div>
+
+            <!-- Seconds -->
+            <div class="countdown-card">
+              <div class="countdown-card-inner">
+                <span class="countdown-corner-bracket tl"></span>
+                <span class="countdown-corner-bracket tr"></span>
+                <span class="countdown-corner-bracket bl"></span>
+                <span class="countdown-corner-bracket br"></span>
+                <div class="countdown-value-wrap">
+                  <span class="countdown-number" id="countdownSeconds">00</span>
+                </div>
+                <span class="countdown-label">SECONDS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action: Add to Calendar -->
+          <div class="countdown-footer-row">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dhyuthi+7.0+%E2%80%94+IEEE+SCT+SB+Tech+Festival&dates=20261023T033000Z/20261025T153000Z&details=Dhyuthi+7.0+Annual+State-Level+Flagship+Technical+Festival+at+SCT+College+of+Engineering%2C+Trivandrum.+Step+into+the+Light!&location=SCT+College+of+Engineering%2C+Pappanamcode%2C+Thiruvananthapuram%2C+Kerala+695018"
+               target="_blank" rel="noopener noreferrer" class="countdown-calendar-btn" title="Add Dhyuthi 7.0 to Google Calendar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <line x1="12" y1="14" x2="12" y2="18"></line>
+                <line x1="10" y1="16" x2="14" y2="16"></line>
+              </svg>
+              <span>Add to Calendar</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dhyuthi 7.0 Tri-Phase Photonic Continuum -->
+        <div class="hero-continuum-strip" id="heroContinuum">
+          <div class="continuum-header">
+            <div class="continuum-beacon">
+              <span class="beacon-pulse"></span>
+              <span class="beacon-label">SOLAR CONCLAVE // 2026</span>
+            </div>
+            <div class="continuum-coords">TRIVANDRUM • 8.5241° N, 76.9366° E</div>
+          </div>
+
+          <div class="continuum-timeline">
+            <!-- Phase 1 -->
+            <div class="continuum-phase" data-phase="1">
+              <div class="phase-node-indicator">
+                <span class="phase-dot"></span>
+                <span class="phase-num-tag">PHASE 01</span>
+              </div>
+              <div class="phase-date-block">
+                <span class="phase-day">23</span>
+                <div class="phase-meta">
+                  <span class="phase-month">OCTOBER</span>
+                  <span class="phase-title">IGNITION & HACKATHON</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inter-phase Laser Conduit -->
+            <div class="continuum-conduit" aria-hidden="true">
+              <div class="conduit-line"></div>
+              <span class="conduit-arrow">▸</span>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="continuum-phase" data-phase="2">
+              <div class="phase-node-indicator">
+                <span class="phase-dot"></span>
+                <span class="phase-num-tag">PHASE 02</span>
+              </div>
+              <div class="phase-date-block">
+                <span class="phase-day">24</span>
+                <div class="phase-meta">
+                  <span class="phase-month">OCTOBER</span>
+                  <span class="phase-title">CONCLAVE & WORKSHOPS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inter-phase Laser Conduit -->
+            <div class="continuum-conduit" aria-hidden="true">
+              <div class="conduit-line"></div>
+              <span class="conduit-arrow">▸</span>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="continuum-phase" data-phase="3">
+              <div class="phase-node-indicator">
+                <span class="phase-dot"></span>
+                <span class="phase-num-tag">PHASE 03</span>
+              </div>
+              <div class="phase-date-block">
+                <span class="phase-day">25</span>
+                <div class="phase-meta">
+                  <span class="phase-month">OCTOBER</span>
+                  <span class="phase-title">PRO-SHOW & PINNACLE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions-row">
+          <a href="#tickets" class="btn btn-gold">
+            Register for Dhyuthi 7.0
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#tracks" class="btn btn-glass">
+            <svg class="hero-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            Explore Events
+          </a>
+          <a href="#preevents" class="btn btn-glass-subtle">
+            24h Hackathon & Pre-events
+          </a>
+        </div>
+
+        <!-- Status & Chime Audio Controls -->
+        <div class="hero-status-strip">
+          <div class="hero-sound-toggle" id="soundSequenceStatus" role="button" tabindex="0"
+            title="Toggle Atmospheric Synthesizer Audio">
+            <div class="hero-sound-waves">
+              <div class="hero-sound-bar"></div>
+              <div class="hero-sound-bar"></div>
+              <div class="hero-sound-bar"></div>
+              <div class="hero-sound-bar"></div>
+            </div>
+            <span class="sound-status-label">Ambient Chimes Ready</span>
+          </div>
+
+          <div class="hero-reduced-motion-box">
+            <label for="reducedMotionSwitch" style="cursor: pointer;">Reduced Motion</label>
+            <label class="switch-ui" aria-label="Toggle Reduced Motion">
+              <input type="checkbox" id="reducedMotionSwitch">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LIVE ANNOUNCEMENT TICKER
+         ========================================================================== -->
+    <div class="ticker-section" aria-label="Latest Event Updates">
+      <div class="container ticker-container">
+        <div class="ticker-label">
+          <div class="ticker-pulse-dot"></div>
+          DHYUTHI 7.0 TELEMETRY
+        </div>
+
+        <div class="ticker-marquee-viewport">
+          <div class="ticker-marquee-track">
+            <a href="#tracks" class="ticker-pill-item" data-target="#tracks">
+              <span class="ticker-pill-icon">⚡</span>
+              4 Flagship Tracks Announced
+              <span class="ticker-pill-arrow">›</span>
+            </a>
+            <a href="#tickets" class="ticker-pill-item" data-target="#tickets">
+              <span class="ticker-pill-icon">🎟️</span>
+              Delegate Passes Open • Early Bird Active
+              <span class="ticker-pill-arrow">›</span>
+            </a>
+            <a href="#preevents" class="ticker-pill-item" data-target="#preevents">
+              <span class="ticker-pill-icon">🏆</span>
+              Trail Quest 7.0 & Hackathon Registrations Live
+              <span class="ticker-pill-arrow">›</span>
+            </a>
+            <a href="#faqs" class="ticker-pill-item" data-target="#faqs">
+              <span class="ticker-pill-icon">📜</span>
+              30 KTU Activity Points Approved
+              <span class="ticker-pill-arrow">›</span>
+            </a>
+          </div>
+        </div>
+
+        <button class="ticker-ctrl-btn" aria-label="Pause or play live updates ticker" title="Pause live ticker">
+          <svg viewBox="0 0 24 24">
+            <rect x="6" y="4" width="4" height="16" />
+            <rect x="14" y="4" width="4" height="16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         ABOUT SECTION: PHILOSOPHY, METRICS & IEEE SCT SB
+         ========================================================================== -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">IEEE SCT SB Flagship Event</div>
+          <h2 class="section-title">About <span class="gold-gradient-text">Dhyuthi 7.0</span></h2>
+        </div>
+
+        <!-- Official About Overview Card -->
+        <div class="about-overview-card glass-card bracket-box"
+          style="max-width: 960px; margin: 0 auto 3rem; padding: clamp(1.5rem, 3.5vw, 2.5rem); background: rgba(18, 14, 9, 0.82); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-md); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.1);">
+          <div class="bracket-tl"></div>
+          <div class="bracket-tr"></div>
+          <div class="bracket-bl"></div>
+          <div class="bracket-br"></div>
+
+          <p style="font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.85; color: var(--text-body); margin-bottom: 1.25rem;">
+            <strong>Dhyuthi</strong>, the flagship event of <strong>IEEE SCT SB</strong>, is back for its <strong>7th edition</strong>. This highly anticipated event will feature four distinct tracks that delve into relevant topics and showcase technologies with significant growth potential, offering participants a chance to explore cutting-edge advancements in various fields.
+          </p>
+          <p style="font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.85; color: var(--text-body); margin-bottom: 1.25rem;">
+            Dhyuthi is designed to provide a rich experience, packed with technical workshops where attendees can gain hands-on skills as well as participate in competitions that encourage innovation and teamwork.
+          </p>
+          <p style="font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.85; color: var(--text-body); margin: 0;">
+            <strong>Dhyuthi 7.0</strong> fosters collaboration and innovation, offering diverse activities that promote personal growth and academic discourse, solidifying its status as a highly anticipated IEEE event.
+          </p>
+        </div>
+
+        <!-- About Showcase Cards -->
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; align-items: stretch; margin-bottom: 4rem;">
+          <div class="glass-card bracket-box" style="padding: 2.5rem;">
+            <div class="bracket-tl"></div>
+            <div class="bracket-tr"></div>
+            <div class="bracket-bl"></div>
+            <div class="bracket-br"></div>
+            <span class="mono-tag" style="margin-bottom: 0.75rem; display: block;">Theme Paradigm</span>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff;">The Light Core Identity</h3>
+            <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
+              Dhyuthi 7.0 introduces the <strong>Light Core</strong>: an interactive computational nexus where human
+              ambition and technology meet. The interplay of molten gold and deep obsidian void symbolizes the bridge
+              between engineering principles and emergent artificial intelligence.
+            </p>
+          </div>
+
+          <div class="glass-card bracket-box" style="padding: 2.5rem;">
+            <div class="bracket-tl"></div>
+            <div class="bracket-tr"></div>
+            <div class="bracket-bl"></div>
+            <div class="bracket-br"></div>
+            <span class="mono-tag" style="margin-bottom: 0.75rem; display: block;">Organization & Legacy</span>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff;">IEEE SCT Student Branch</h3>
+            <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
+              Established under IEEE Kerala Section (Region 10), IEEE SCT SB at Sree Chitra Thirunal College of
+              Engineering has championed technical excellence, student leadership, and community development for over two
+              decades. Dhyuthi stands as its grandest annual testimony.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FESTIVAL SCALE & IMPACT TELEMETRY (Inspired by Techfest IIT Bombay)
+         ========================================================================== -->
+    <section id="metrics" class="festival-metrics-section" aria-label="Festival Impact Telemetry">
+      <div class="container metrics-container">
+        <div class="metrics-header-row">
+          <div>
+            <div class="metrics-header-tag">DHYUTHI 7.0 NEXUS TELEMETRY</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; margin-top: 0.25rem;">Scale &
+              Impact at a Glance</h3>
+          </div>
+          <div class="metrics-subtag">OCTOBER 23–25, 2026 • SCTCE TRIVANDRUM</div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-val">₹2,00,000+</div>
+            <div class="metric-label">Cash Bounty Pool</div>
+            <div class="metric-desc">Cash prizes across 4 flagship tracks, 24h hackathon & esports showdown</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">40+</div>
+            <div class="metric-label">KTU Activity Points</div>
+            <div class="metric-desc">Accredited by APJ Abdul Kalam Technological University for all attendees</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">3,500+</div>
+            <div class="metric-label">Expected Delegates</div>
+            <div class="metric-desc">Engineering delegates representing 80+ universities across India</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">24h</div>
+            <div class="metric-label">Hackathon Sprint</div>
+            <div class="metric-desc">Continuous high-intensity AI, hardware & systems buildathon with industry mentors
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-val">15+</div>
+            <div class="metric-label">Industry Mentors</div>
+            <div class="metric-desc">Hands-on guidance from senior leads at Google, Microsoft, ISRO & IEEE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TRACKS SECTION: WORKSHOPS, COMPETITIONS & KEYNOTES
+         ========================================================================== -->
+    <section id="tracks">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">Academic & Technical Exploration</div>
+          <h2 class="section-title">Flagship <span class="gold-gradient-text">Festival Tracks</span></h2>
+          <p class="section-desc">
+            Four specialized tracks curated by IEEE SCT SB. Each track delivers immersive hands-on workshops, project
+            challenges, industry keynotes, and up to 30 KTU activity points.
+          </p>
+        </div>
+
+        <!-- Live Event Search & Category Filter Bar (Inspired by Drishti CET) -->
+        <div class="event-filter-nexus">
+          <div class="filter-search-row">
+            <div class="search-input-wrapper">
+              <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input type="text" id="eventSearchInput" class="event-search-input"
+                placeholder="Search tracks, workshops, hackathons, topics (e.g. AI, ROS2, UX, Cyber)..."
+                aria-label="Search events and workshops">
+            </div>
+            <div class="filter-results-badge" id="eventResultsCount">Showing 4 Flagship Tracks</div>
+          </div>
+          <div class="filter-chips-row">
+            <span
+              style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--gold-300); text-transform: uppercase; letter-spacing: 0.12em; margin-right: 0.25rem;">Domain:</span>
+            <button class="filter-chip-btn active" data-category="all">All Domains</button>
+            <button class="filter-chip-btn" data-category="ai">AI & Neural</button>
+            <button class="filter-chip-btn" data-category="robotics">Robotics & Hardware</button>
+            <button class="filter-chip-btn" data-category="creative">Design & Computing</button>
+            <button class="filter-chip-btn" data-category="cloud">Security & Cloud</button>
+            <button class="filter-chip-btn" data-category="hackathon">Hackathon</button>
+          </div>
+        </div>
+
+        <!-- Track Cards Grid -->
+        <div class="tracks-grid">
+          <!-- Track 1: AIGENIX -->
+          <div class="track-card" data-categories="workshops competitions talks">
+            <div class="track-card-header">
+              <img src="assets/icons/track-aigenix.svg" alt="Aigenix Track" class="track-badge-img">
+              <span class="track-tag-badge">AI / ML / Neural</span>
+            </div>
+            <h3 class="track-title">AIGENIX</h3>
+            <div class="track-sub">Artificial Intelligence & Neural Architectures</div>
+            <p class="track-description">
+              Dive deep into autonomous agent workflows, Large Language Model fine-tuning, computer vision on edge
+              devices, and multimodal reasoning.
+            </p>
+            <ul class="track-highlights-list">
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Workshop: Autonomous Agent Swarms with LangGraph
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Competition: Neural Pitch Challenge (₹30K Prize)
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                30 KTU Points + IEEE Workshop Certificate
+              </li>
+            </ul>
+            <div class="track-footer-action">
+              <button class="btn btn-glass" data-track-explore="aigenix">Explore Track & Syllabus</button>
+            </div>
+          </div>
+
+          <!-- Track 2: CELLESTRO -->
+          <div class="track-card" data-categories="workshops competitions">
+            <div class="track-card-header">
+              <img src="assets/icons/track-cellestro.svg" alt="Cellestro Track" class="track-badge-img">
+              <span class="track-tag-badge">Robotics & IoT</span>
+            </div>
+            <h3 class="track-title">CELLESTRO</h3>
+            <div class="track-sub">Robotics, Biomedical Systems & IoT</div>
+            <p class="track-description">
+              Hands-on hardware labs bridging robotic kinematics, bio-potential signal acquisition (EMG/ECG), ROS2
+              navigation, and industrial IoT.
+            </p>
+            <ul class="track-highlights-list">
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Workshop: ROS2 Autonomous Mobile Robotics
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Competition: RoboWars & Maze Solver Grand Prix
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                30 KTU Points + Hardware Kit Included
+              </li>
+            </ul>
+            <div class="track-footer-action">
+              <button class="btn btn-glass" data-track-explore="cellestro">Explore Track & Syllabus</button>
+            </div>
+          </div>
+
+          <!-- Track 3: INCEPTA -->
+          <div class="track-card" data-categories="workshops spotlight">
+            <div class="track-card-header">
+              <img src="assets/icons/track-incepta.svg" alt="Incepta Track" class="track-badge-img">
+              <span class="track-tag-badge">UI/UX & Creative</span>
+            </div>
+            <h3 class="track-title">INCEPTA</h3>
+            <div class="track-sub">Creative Computing, UI/UX & Web3</div>
+            <p class="track-description">
+              Where design thinking meets high performance code. Design system tokens, interactive 3D WebGL scenes, and
+              product architecture.
+            </p>
+            <ul class="track-highlights-list">
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Workshop: Design Systems & Interactive 3D Web
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Competition: 12-Hour Product Redesign Sprint
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                30 KTU Points + Industry Portfolio Review
+              </li>
+            </ul>
+            <div class="track-footer-action">
+              <button class="btn btn-glass" data-track-explore="incepta">Explore Track & Syllabus</button>
+            </div>
+          </div>
+
+          <!-- Track 4: SYNKRON -->
+          <div class="track-card" data-categories="workshops competitions talks">
+            <div class="track-card-header">
+              <img src="assets/icons/track-synkron.svg" alt="Synkron Track" class="track-badge-img">
+              <span class="track-tag-badge">Security & Cloud</span>
+            </div>
+            <h3 class="track-title">SYNKRON</h3>
+            <div class="track-sub">Cybersecurity, Cloud & Distributed Defense</div>
+            <p class="track-description">
+              Offensive red-teaming, zero-trust infrastructure, cloud-native DevOps pipelines, and vulnerability
+              assessment methodologies.
+            </p>
+            <ul class="track-highlights-list">
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Workshop: Offensive Security & Live CTF Defense
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Competition: 24h Capture The Flag (CTF) Arena
+              </li>
+              <li class="track-highlight-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                30 KTU Points + Live Virtual Lab Environment
+              </li>
+            </ul>
+            <div class="track-footer-action">
+              <button class="btn btn-glass" data-track-explore="synkron">Explore Track & Syllabus</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PRE-EVENTS SECTION: POSTERS, TEASERS, REGISTRATION CTAS
+         ========================================================================== -->
+    <section id="preevents">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">Build-Up to the Grand Festival</div>
+          <h2 class="section-title">Official <span class="gold-gradient-text">Pre-Events</span></h2>
+          <p class="section-desc">
+            Ignite your competitive spirit before the main 3-day symposium. Participate in campus scavenger quests,
+            design battles, esports tournaments, and ideathons to win cash prizes and direct track passes.
+          </p>
+        </div>
+
+        <div class="preevents-grid">
+          <!-- Pre-Event 1: Trail Quest 7.0 -->
+          <article class="preevent-card" id="card-trailquest">
+            <div class="preevent-media-wrapper">
+              <img src="assets/images/poster-trailquest.jpg" alt="Trail Quest 7.0 Poster" class="preevent-poster-img"
+                loading="lazy">
+              <div class="preevent-media-overlay"></div>
+              <div class="preevent-badge-stack">
+                <span class="preevent-status-tag live">Live</span>
+                <span class="preevent-status-tag">Campus Quest</span>
+              </div>
+              <div class="preevent-prize-tag">₹15,000 Pool</div>
+            </div>
+            <div class="preevent-body">
+              <div class="preevent-track-tag">Cryptography & Adventure</div>
+              <h3 class="preevent-title">Trail Quest 7.0</h3>
+              <p class="preevent-desc">
+                Decode cryptographic ciphers, AR markers, and embedded clues across SCTCE campus in the biggest student
+                scavenger hunt.
+              </p>
+              <div class="preevent-meta-row">
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  OCT 18 • 09:30 AM
+                </div>
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                  2-4 Members
+                </div>
+              </div>
+              <div class="preevent-actions">
+                <button class="btn btn-glass" data-preevent-view="trail-quest">Quick View</button>
+                <button class="btn btn-gold" data-preevent-register="trail-quest">Register Now</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pre-Event 2: DoodleQuest 7.0 -->
+          <article class="preevent-card" id="card-doodlequest">
+            <div class="preevent-media-wrapper">
+              <img src="assets/images/poster-doodlequest.jpg" alt="DoodleQuest 7.0 Design Poster"
+                class="preevent-poster-img" loading="lazy">
+              <div class="preevent-media-overlay"></div>
+              <div class="preevent-badge-stack">
+                <span class="preevent-status-tag live">Live</span>
+                <span class="preevent-status-tag">Design Sprint</span>
+              </div>
+              <div class="preevent-prize-tag">₹12,000 Pool</div>
+            </div>
+            <div class="preevent-body">
+              <div class="preevent-track-tag">Incepta UI/UX Chapter</div>
+              <h3 class="preevent-title">DoodleQuest 7.0</h3>
+              <p class="preevent-desc">
+                Creative digital design battle. Craft futuristic design systems, responsive wireframes, and interactive
+                components.
+              </p>
+              <div class="preevent-meta-row">
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  OCT 19 • 06:00 PM
+                </div>
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                  Solo / Duo
+                </div>
+              </div>
+              <div class="preevent-actions">
+                <button class="btn btn-glass" data-preevent-view="doodle-quest">Quick View</button>
+                <button class="btn btn-gold" data-preevent-register="doodle-quest">Register Now</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pre-Event 3: Strikezone 7.0 -->
+          <article class="preevent-card" id="card-strikezone">
+            <div class="preevent-media-wrapper">
+              <img src="assets/images/poster-strikezone.jpg" alt="Strikezone 7.0 Esports Poster"
+                class="preevent-poster-img" loading="lazy">
+              <div class="preevent-media-overlay"></div>
+              <div class="preevent-badge-stack">
+                <span class="preevent-status-tag"
+                  style="border-color: rgba(212, 175, 55, 0.4); color: var(--gold-300);">Upcoming</span>
+                <span class="preevent-status-tag">Esports Arena</span>
+              </div>
+              <div class="preevent-prize-tag">₹20,000 Pool</div>
+            </div>
+            <div class="preevent-body">
+              <div class="preevent-track-tag">Gaming & Cyber Tournament</div>
+              <h3 class="preevent-title">Strikezone 7.0</h3>
+              <p class="preevent-desc">
+                High-octane collegiate Valorant and BGMI showdown. Knockout brackets, live Twitch casting, and
+                championship glory.
+              </p>
+              <div class="preevent-meta-row">
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  OCT 20-22 • 05:00 PM
+                </div>
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                  5v5 Roster
+                </div>
+              </div>
+              <div class="preevent-actions">
+                <button class="btn btn-glass" data-preevent-view="strikezone">Quick View</button>
+                <button class="btn btn-gold" data-preevent-register="strikezone">Register Now</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pre-Event 4: Synapse Ideathon 7.0 -->
+          <article class="preevent-card" id="card-synapse">
+            <div class="preevent-media-wrapper">
+              <img src="assets/images/poster-synapse.jpg" alt="Synapse Ideathon Poster" class="preevent-poster-img"
+                loading="lazy">
+              <div class="preevent-media-overlay"></div>
+              <div class="preevent-badge-stack">
+                <span class="preevent-status-tag live">Live</span>
+                <span class="preevent-status-tag">24h Hackathon</span>
+              </div>
+              <div class="preevent-prize-tag">₹25,000 Pool</div>
+            </div>
+            <div class="preevent-body">
+              <div class="preevent-track-tag">Innovation & Social Impact</div>
+              <h3 class="preevent-title">Synapse Ideathon 7.0</h3>
+              <p class="preevent-desc">
+                24-hour sprint addressing sustainability, disaster tech, and assistive engineering. Pitch your
+                proof-of-concept to venture mentors.
+              </p>
+              <div class="preevent-meta-row">
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  OCT 21 • 10:00 AM
+                </div>
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                  2-4 Members
+                </div>
+              </div>
+              <div class="preevent-actions">
+                <button class="btn btn-glass" data-preevent-view="synapse-ideathon">Quick View</button>
+                <button class="btn btn-gold" data-preevent-register="synapse-ideathon">Register Now</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pre-Event 5: PromptCraft AI Duel -->
+          <article class="preevent-card" id="card-promptarena">
+            <div class="preevent-media-wrapper">
+              <img src="assets/images/poster-promptarena.jpg" alt="PromptCraft AI Duel Poster"
+                class="preevent-poster-img" loading="lazy">
+              <div class="preevent-media-overlay"></div>
+              <div class="preevent-badge-stack">
+                <span class="preevent-status-tag live">Live</span>
+                <span class="preevent-status-tag">AI Duel</span>
+              </div>
+              <div class="preevent-prize-tag">₹10,000 Pool</div>
+            </div>
+            <div class="preevent-body">
+              <div class="preevent-track-tag">Aigenix AI Chapter</div>
+              <h3 class="preevent-title">PromptCraft AI Duel</h3>
+              <p class="preevent-desc">
+                Face off in real-time generative AI prompt battles. Synthesize precision visual models and algorithmic
+                logic faster than your opponent.
+              </p>
+              <div class="preevent-meta-row">
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  OCT 22 • 04:00 PM
+                </div>
+                <div class="preevent-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                  Solo
+                </div>
+              </div>
+              <div class="preevent-actions">
+                <button class="btn btn-glass" data-preevent-view="prompt-arena">Quick View</button>
+                <button class="btn btn-gold" data-preevent-register="prompt-arena">Register Now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SCHEDULE SECTION: 3-DAY TIMELINE & ICS CALENDAR EXPORT
+         ========================================================================== -->
+    <section id="schedule">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">Chronology of Innovation</div>
+          <h2 class="section-title">Festival <span class="gold-gradient-text">Schedule</span></h2>
+          <p class="section-desc">
+            Three exhilarating days packed with hands-on learning, high-stakes project battles, keynote dialogues, and
+            electric cultural evenings.
+          </p>
+        </div>
+
+        <!-- Day Tabs -->
+        <div class="schedule-tabs-wrapper">
+          <button class="day-tab-btn active" data-day="day1">
+            <span class="day-title">DAY 1</span>
+            <span class="day-date">OCT 23, 2026 • IGNITION</span>
+          </button>
+          <button class="day-tab-btn" data-day="day2">
+            <span class="day-title">DAY 2</span>
+            <span class="day-date">OCT 24, 2026 • WORKSHOPS</span>
+          </button>
+          <button class="day-tab-btn" data-day="day3">
+            <span class="day-title">DAY 3</span>
+            <span class="day-date">OCT 25, 2026 • SPOTLIGHT</span>
+          </button>
+        </div>
+
+        <!-- Timeline: Day 1 Schedule -->
+        <div class="timeline-container" data-day-schedule="day1">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  09:00 AM - 10:30 AM
+                </div>
+                <span class="timeline-tag">Main Auditorium</span>
+              </div>
+              <h3 class="timeline-event-title">Inaugural Ceremony & Light Core Unveiling</h3>
+              <p class="timeline-event-desc">
+                Lighting of the ceremonial lamp, address by IEEE Kerala Section dignitaries, and the live kinetic
+                activation of the Dhyuthi 7.0 Light Core chamber.
+              </p>
+              <div class="timeline-footer-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg> All Attendees</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg> Keynote Stage</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  11:00 AM - 01:00 PM
+                </div>
+                <span class="timeline-tag">Hall A & B</span>
+              </div>
+              <h3 class="timeline-event-title">Global Keynote Dialogues: Frontier Tech 2030</h3>
+              <p class="timeline-event-desc">
+                Invited tech leaders from Google DeepMind, IEEE Computer Society, and ISRO discuss multimodal AI models,
+                quantum communications, and ethical AI development.
+              </p>
+              <div class="timeline-footer-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                  </svg> Open Discussion</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 16 14" />
+                  </svg>
+                  02:00 PM - 05:30 PM
+                </div>
+                <span class="timeline-tag">Parallel Halls</span>
+              </div>
+              <h3 class="timeline-event-title">Track Orientation & Hackathon Sprint Kickoff</h3>
+              <p class="timeline-event-desc">
+                Setup of toolchains, problem statements release for Aigenix and Synkron hackathons, and initial mentor
+                feedback rounds.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline: Day 2 Schedule -->
+        <div class="timeline-container" data-day-schedule="day2" style="display: none;">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  09:30 AM - 01:00 PM
+                </div>
+                <span class="timeline-tag">Specialized Labs</span>
+              </div>
+              <h3 class="timeline-event-title">Parallel Hands-on Technical Workshops (Part I)</h3>
+              <p class="timeline-event-desc">
+                AIGENIX (Agent Swarms), CELLESTRO (ROS2 Robotics), INCEPTA (3D WebGL), and SYNKRON (Red Team PenTesting)
+                conducted by industry veterans.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  02:00 PM - 05:00 PM
+                </div>
+                <span class="timeline-tag">Lab Complex</span>
+              </div>
+              <h3 class="timeline-event-title">Parallel Hands-on Technical Workshops (Part II)</h3>
+              <p class="timeline-event-desc">
+                Advanced implementation, testing, sensor calibration, deployment, and practical evaluation tests for
+                verification.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  06:00 PM - 09:00 PM
+                </div>
+                <span class="timeline-tag">Campus Amphitheatre</span>
+              </div>
+              <h3 class="timeline-event-title">Overnight Coding Marathon & Esports Semifinals</h3>
+              <p class="timeline-event-desc">
+                Continuous prototyping session with midnight refreshments, acoustic musical performances, and gaming
+                playoffs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline: Day 3 Schedule -->
+        <div class="timeline-container" data-day-schedule="day3" style="display: none;">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  09:30 AM - 01:00 PM
+                </div>
+                <span class="timeline-tag">Pitch Decks</span>
+              </div>
+              <h3 class="timeline-event-title">Grand Finals & Project Exhibitions</h3>
+              <p class="timeline-event-desc">
+                Final project presentations in front of technical judges, venture capitalists, and IEEE senior fellows.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  03:30 PM - 05:30 PM
+                </div>
+                <span class="timeline-tag">Main Auditorium</span>
+              </div>
+              <h3 class="timeline-event-title">Valedictory Ceremony & Award Distribution</h3>
+              <p class="timeline-event-desc">
+                Declaration of winners, presentation of ₹1,50,000+ cash prizes, trophy distribution, and issuance of
+                verified KTU activity point certificates.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-meta">
+                <div class="timeline-time-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  06:30 PM - 10:00 PM
+                </div>
+                <span class="timeline-tag">Open Air Grounds</span>
+              </div>
+              <h3 class="timeline-event-title">Grand Cultural Spotlight: Pro-Show & DJ Night</h3>
+              <p class="timeline-event-desc">
+                Electrifying live band performance, electronic light spectacle, and festival celebration to conclude
+                Dhyuthi 7.0.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sync Calendar CTA -->
+        <div class="schedule-sync-bar">
+          <button class="btn btn-gold" id="exportCalendarBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Sync Schedule to Calendar (.ICS)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         GALLERY SECTION: FESTIVAL MEMORIES & LIGHTBOX
+         ========================================================================== -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">Visual Chronicles</div>
+          <h2 class="section-title">Dhyuthi <span class="gold-gradient-text">Moments</span></h2>
+          <p class="section-desc">
+            A glimpse into the energy, hands-on collaboration, stage thrills, and student victories that define the
+            Dhyuthi legacy.
+          </p>
+        </div>
+
+        <!-- Filter Row -->
+        <div class="gallery-filter-row">
+          <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
+          <button class="gallery-filter-btn" data-filter="crowd">Auditorium & Crowd</button>
+          <button class="gallery-filter-btn" data-filter="workshop">Workshops & Labs</button>
+          <button class="gallery-filter-btn" data-filter="awards">Awards & Trophies</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <div class="gallery-item" data-category="crowd" data-full="assets/images/gallery-auditorium.jpg">
+            <img src="assets/images/gallery-auditorium.jpg" alt="Tech Fest Auditorium Crowd" loading="lazy">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-caption">Auditorium Electric Atmosphere</div>
+              <div class="gallery-item-tag">Dhyuthi Main Stage • 2500+ Attendees</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="workshop" data-full="assets/images/gallery-workshop.jpg">
+            <img src="assets/images/gallery-workshop.jpg" alt="Students in Hardware Workshop" loading="lazy">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-caption">Robotics & Sensor Lab</div>
+              <div class="gallery-item-tag">Cellestro Track • Hands-on Engineering</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="awards" data-full="assets/images/gallery-awards.jpg">
+            <img src="assets/images/gallery-awards.jpg" alt="Grand Award Distribution" loading="lazy">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-caption">Grand Valedictory Champions</div>
+              <div class="gallery-item-tag">IEEE SCT SB • ₹1.5L Prize Distribution</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="workshop" data-full="assets/images/poster-promptarena.jpg">
+            <img src="assets/images/poster-promptarena.jpg" alt="PromptCraft AI Duel" loading="lazy">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-caption">Generative AI Duel Arena</div>
+              <div class="gallery-item-tag">Aigenix Track • Model Synthesizers</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="crowd" data-full="assets/images/poster-strikezone.jpg">
+            <img src="assets/images/poster-strikezone.jpg" alt="Strikezone Esports Arena" loading="lazy">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-caption">Esports Gaming Arena Finals</div>
+              <div class="gallery-item-tag">Cyber Arena • Inter-College Clash</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="workshop" data-full="assets/images/poster-synapse.jpg">
+            <img src="assets/images/poster-synapse.jpg" alt="Synapse Ideathon Brainstorming" loading="lazy">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-caption">Synapse Innovation Lab</div>
+              <div class="gallery-item-tag">Ideathon • 24hr Rapid Prototyping</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PRONITE & CULTURAL SPOTLIGHT: CRESCENDO 7.0 (Inspired by Tathva NIT Calicut)
+         ========================================================================== -->
+    <section id="pronite" class="pronite-section" aria-label="Pronite Cultural Spotlight">
+      <div class="container">
+        <div class="pronite-stage-card">
+          <div class="pronite-grid">
+            <div>
+              <div class="pronite-eyebrow">
+                <span class="beacon-pulse"></span>
+                DAY 03 PINNACLE • OCT 25 // 06:30 PM
+              </div>
+              <h2 class="pronite-title">CRESCENDO <span class="gold-gradient-text">7.0</span></h2>
+              <div class="pronite-meta-tags">
+                <span class="pronite-badge">SCTCE Open Amphitheatre</span>
+                <span class="pronite-badge">Celebrity DJ Headliner</span>
+                <span class="pronite-badge">Live Indie Rock Band</span>
+                <span class="pronite-badge">Laser Light Symphony</span>
+              </div>
+              <p class="pronite-desc">
+                When the code settles and the prototypes power down, Dhyuthi erupts into an unforgettable sonic
+                spectacle. Experience a night of high-octane bass, synchronized laser optics, and celebrated musical
+                artists under the open Kerala sky.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#tickets" class="btn btn-gold">
+                  Get All-Access Pass (Pronite Included)
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#schedule" class="btn btn-glass">View Day 3 Lineup</a>
+              </div>
+            </div>
+
+            <div class="pronite-visual-box">
+              <img src="assets/images/gallery-auditorium.jpg" alt="Dhyuthi Pronite Concert & Crowd" loading="lazy">
+              <div class="pronite-audio-waves" aria-hidden="true">
+                <div class="sound-bar-anim"></div>
+                <div class="sound-bar-anim"></div>
+                <div class="sound-bar-anim"></div>
+                <div class="sound-bar-anim"></div>
+                <div class="sound-bar-anim"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CAMPUS AMBASSADOR PROGRAM (Inspired by Techfest IIT Bombay)
+         ========================================================================== -->
+    <section id="ambassador" class="ambassador-section" aria-label="Campus Ambassador Program">
+      <div class="container">
+        <div class="ambassador-card">
+          <div class="ambassador-content">
+            <span class="mono-tag" style="margin-bottom: 0.5rem; display: inline-block;">Student Leadership
+              Initiative</span>
+            <h3
+              style="font-family: var(--font-serif); font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; margin-bottom: 0.6rem;">
+              Become a <span class="gold-gradient-text">Dhyuthi 7.0 Campus Ambassador</span>
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">
+              Represent Dhyuthi 7.0 at your university! Lead delegates from your campus, earn exclusive benefits, and
+              establish your network with top engineers, industry speakers, and IEEE student branches across India.
+            </p>
+            <ul class="ambassador-perks-list">
+              <li class="ambassador-perk-item">✓ Complimentary All-Access Pass</li>
+              <li class="ambassador-perk-item">✓ IEEE Leadership Certificate</li>
+              <li class="ambassador-perk-item">✓ VIP Speaker Lounge Entry</li>
+              <li class="ambassador-perk-item">✓ Best Ambassador Cash Bounty</li>
+            </ul>
+          </div>
+          <div>
+            <a href="https://forms.gle/dhyuthi7ambassador" target="_blank" rel="noopener" class="btn btn-gold"
+              style="white-space: nowrap;">
+              Apply as Ambassador
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TICKETS & PASSES SECTION: DYNAMIC IEEE MEMBER DISCOUNT
+         ========================================================================== -->
+    <section id="tickets">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">Join the Festival</div>
+          <h2 class="section-title">Festival <span class="gold-gradient-text">Passes & Registration</span></h2>
+          <p class="section-desc">
+            Choose your pass to experience hands-on technical workshops, competitive hackathons, pro-shows, and verified
+            KTU activity points.
+          </p>
+        </div>
+
+        <!-- IEEE Member 20% Discount Toggle -->
+        <div class="ticket-discount-banner">
+          <label class="switch-ui" aria-label="Toggle IEEE Member Discount">
+            <input type="checkbox" id="ieeeMemberToggle">
+            <span class="switch-slider"></span>
+          </label>
+          <div class="ticket-discount-label">
+            IEEE Member? <span>Apply 20% Instant Member Rebate</span>
+          </div>
+        </div>
+
+        <!-- Pass Tiers Grid -->
+        <div class="tickets-grid">
+          <!-- Tier 1: Single Track Pass -->
+          <div class="ticket-card">
+            <div class="ticket-tier-name">Single Track Pass</div>
+            <div class="ticket-tier-tagline">Access to any 1 Track + Kit</div>
+            <div class="ticket-price-box">
+              <span class="currency-sym">₹</span>
+              <span class="ticket-price-amount" id="priceSingleTrack">499</span>
+              <span class="ticket-per">/ attendee</span>
+            </div>
+            <ul class="ticket-features-list">
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Choice of 1 Track (Aigenix, Cellestro, Incepta, or Synkron)
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Full Hands-on Workshop & Hardware Access
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                30 KTU Activity Points Certification
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Lunch & Daily Refreshments Included
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Official Dhyuthi 7.0 Delegate Kit & Stickers
+              </li>
+            </ul>
+            <button class="btn btn-glass" data-ticket-tier="single-track">Select Single Track</button>
+          </div>
+
+          <!-- Tier 2: All-Access Pass (Featured) -->
+          <div class="ticket-card featured">
+            <div class="ticket-featured-ribbon">Most Popular • All Inclusive</div>
+            <div class="ticket-tier-name">All-Access Pass</div>
+            <div class="ticket-tier-tagline">Unrestricted 3-Day Festival Access</div>
+            <div class="ticket-price-box">
+              <span class="currency-sym">₹</span>
+              <span class="ticket-price-amount" id="priceAllAccess">899</span>
+              <span class="ticket-per">/ attendee</span>
+            </div>
+            <ul class="ticket-features-list">
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Unrestricted Access to All 4 Tracks & Keynotes
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Entry to All Hackathons, CTF & RoboWars
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Maximum Approved KTU Activity Points
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                VIP Entry to Cultural Spotlight & Pro-Show
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Full 3-Day Meals & Special Networking Dinner
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Premium IEEE SCT SB Dhyuthi Swag Bag
+              </li>
+            </ul>
+            <button class="btn btn-gold" data-ticket-tier="all-access">Book All-Access Pass</button>
+          </div>
+
+          <!-- Tier 3: Pre-Events Combo Pass -->
+          <div class="ticket-card">
+            <div class="ticket-tier-name">Pre-Events Pass</div>
+            <div class="ticket-tier-tagline">Access to all 5 Pre-Event Contests</div>
+            <div class="ticket-price-box">
+              <span class="currency-sym">₹</span>
+              <span class="ticket-price-amount" id="pricePreEvents">199</span>
+              <span class="ticket-per">/ attendee</span>
+            </div>
+            <ul class="ticket-features-list">
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Entry to Trail Quest 7.0 Scavenger Hunt
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Entry to DoodleQuest 7.0 & PromptCraft
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Entry to Strikezone 7.0 Esports Championship
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Eligibility for ₹82,000 Total Pre-Event Cash Prizes
+              </li>
+              <li class="ticket-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Official E-Certificate of Participation
+              </li>
+            </ul>
+            <button class="btn btn-glass" data-ticket-tier="pre-events">Select Pre-Events</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQS SECTION: ACCESSIBLE ACCORDION
+         ========================================================================== -->
+    <section id="faqs">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">Common Queries</div>
+          <h2 class="section-title">Frequently Asked <span class="gold-gradient-text">Questions</span></h2>
+          <p class="section-desc">
+            Everything you need to know regarding certificates, KTU activity points, meals, accommodation, and event
+            prerequisites.
+          </p>
+        </div>
+
+        <div class="faq-accordion-stack">
+          <!-- FAQ 1 -->
+          <div class="faq-item open">
+            <button class="faq-question-btn" aria-expanded="true">
+              <span>Will participants receive verified KTU activity points?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" style="max-height: 200px;">
+              <div class="faq-answer-content">
+                Yes! Participants attending the technical workshops and competitions will receive up to 30 KTU activity
+                points as approved by the university, along with an official certificate issued by IEEE SCT SB.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>Are meals and refreshments included in the registration passes?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <div class="faq-answer-content">
+                Yes, both Single Track and All-Access passes include wholesome lunch, evening snacks, and tea/coffee
+                across the festival days.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>Is accommodation available for outstation participants?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <div class="faq-answer-content">
+                Yes, comfortable hostel and guest room accommodation is arranged near SCTCE campus for students
+                traveling from across Kerala and other states at nominal subsidized rates. Breakfast is provided for
+                staying attendees.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>What do I need to bring for the hands-on workshops?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <div class="faq-answer-content">
+                Attendees should bring a personal laptop with charger. Specific software prerequisites (Python 3.11, VS
+                Code, Figma, or Docker) will be shared via email and WhatsApp upon registration. All microcontroller
+                hardware and sensors are provided on-site.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>How does the IEEE Member discount work?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-panel">
+              <div class="faq-answer-content">
+                Active IEEE student members from any college can toggle the member discount switch on the tickets
+                section or enter their 8-digit IEEE Member ID at checkout to instantly receive a 20% discount on all
+                passes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VENUE & LOCATION SECTION: CAMPUS & TRANSIT
+         ========================================================================== -->
+    <section id="venue">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tagline">Destination SCTCE</div>
+          <h2 class="section-title">Event <span class="gold-gradient-text">Venue & Location</span></h2>
+          <p class="section-desc">
+            Sree Chitra Thirunal College of Engineering (SCTCE), Pappanamcode, Thiruvananthapuram, Kerala — easily
+            accessible via rail, road, and air.
+          </p>
+        </div>
+
+        <div class="venue-grid">
+          <!-- Left: Interactive Holographic Campus Radar & Tactical Venue Navigator -->
+          <div id="campusRadarContainer">
+            <!-- Radar HUD Header -->
+            <div class="radar-hud-header">
+              <div class="radar-hud-telemetry">
+                <span class="radar-live-dot" aria-hidden="true"></span>
+                <span class="radar-hud-title">SCTCE TACTICAL RADAR // 8.4702° N, 76.9786° E</span>
+              </div>
+              <div class="radar-mode-switch" role="group" aria-label="Map View Switcher">
+                <button type="button" class="radar-mode-btn active" data-radar-mode="radar" aria-pressed="true">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 1 10 10"></path><circle cx="12" cy="12" r="2"></circle></svg>
+                  Tactical Radar
+                </button>
+                <button type="button" class="radar-mode-btn" data-radar-mode="satellite" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                  Satellite Map
+                </button>
+              </div>
+            </div>
+
+            <!-- Mode 1: Vector Tactical Radar View -->
+            <div class="radar-vector-view">
+              <div class="radar-map-wrapper">
+                <!-- SVG Campus Blueprint & Radar Display -->
+                <svg class="radar-svg-map" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                  <defs>
+                    <pattern id="radarGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(212, 175, 55, 0.08)" stroke-width="1"/>
+                    </pattern>
+                    <radialGradient id="radarRadialGlow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.14"/>
+                      <stop offset="60%" stop-color="#b8860b" stop-opacity="0.04"/>
+                      <stop offset="100%" stop-color="#090806" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="sweepGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="rgba(255, 215, 0, 0)" />
+                      <stop offset="80%" stop-color="rgba(212, 175, 55, 0.05)" />
+                      <stop offset="100%" stop-color="rgba(255, 235, 150, 0.45)" />
+                    </linearGradient>
+                    <filter id="radarGoldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  <!-- 1. Tactical Grid & Ambient Glow -->
+                  <rect width="600" height="400" fill="url(#radarGrid)" />
+                  <rect width="600" height="400" fill="url(#radarRadialGlow)" />
+
+                  <!-- 2. Concentric Radar Distance Rings (Centered at 300, 200) -->
+                  <circle cx="300" cy="200" r="75" fill="none" stroke="rgba(212, 175, 55, 0.22)" stroke-dasharray="3,3" stroke-width="1" />
+                  <circle cx="300" cy="200" r="140" fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-dasharray="4,4" stroke-width="1" />
+                  <circle cx="300" cy="200" r="195" fill="none" stroke="rgba(212, 175, 55, 0.28)" stroke-width="1" />
+
+                  <!-- Crosshair Guides -->
+                  <line x1="300" y1="5" x2="300" y2="395" stroke="rgba(212, 175, 55, 0.12)" stroke-dasharray="2,4" />
+                  <line x1="5" y1="200" x2="595" y2="200" stroke="rgba(212, 175, 55, 0.12)" stroke-dasharray="2,4" />
+
+                  <!-- Range Telemetry Labels -->
+                  <text x="306" y="130" fill="rgba(212, 175, 55, 0.5)" font-size="8" font-family="monospace">R: 50M</text>
+                  <text x="306" y="65" fill="rgba(212, 175, 55, 0.5)" font-size="8" font-family="monospace">R: 100M</text>
+                  <text x="306" y="16" fill="rgba(212, 175, 55, 0.5)" font-size="8" font-family="monospace">R: 200M</text>
+
+                  <!-- Cardinal Bearings -->
+                  <text x="293" y="22" fill="#d4af37" font-size="10" font-weight="bold" font-family="monospace">000° N</text>
+                  <text x="552" y="204" fill="#d4af37" font-size="9" font-family="monospace">090° E</text>
+                  <text x="293" y="388" fill="#d4af37" font-size="9" font-family="monospace">180° S</text>
+                  <text x="12" y="204" fill="#d4af37" font-size="9" font-family="monospace">270° W</text>
+
+                  <!-- 3. Rotating Cathode Radar Sweep Beam -->
+                  <g class="radar-sweep-beam">
+                    <path d="M 300 200 L 490 135 A 195 195 0 0 1 495 200 Z" fill="url(#sweepGradient)" />
+                    <line x1="300" y1="200" x2="495" y2="200" stroke="#ffe57f" stroke-width="1.8" filter="url(#radarGoldGlow)" />
+                  </g>
+
+                  <!-- 4. NH 66 Highway Transit Vector -->
+                  <path d="M -10 65 Q 200 52, 610 32" stroke="rgba(255, 255, 255, 0.12)" stroke-width="22" fill="none" />
+                  <path d="M -10 65 Q 200 52, 610 32" stroke="#d4af37" stroke-width="1.2" stroke-dasharray="6,6" fill="none" />
+                  <text x="410" y="26" fill="rgba(212, 175, 55, 0.7)" font-size="8" font-family="monospace" letter-spacing="1">NH 66 / KANYAKUMARI HWY</text>
+
+                  <!-- 5. SCTCE Campus Boundary Vector -->
+                  <polygon points="65,90 280,75 560,95 560,345 375,370 85,345" fill="rgba(212, 175, 55, 0.02)" stroke="rgba(212, 175, 55, 0.28)" stroke-width="1.2" stroke-dasharray="7,4" />
+
+                  <!-- 6. Walking Conduits Connecting Stages -->
+                  <path d="M 110,65 L 110,120 Q 110,150 170,150 L 295,150 Q 320,150 320,200 L 320,250 Q 320,272 205,272" fill="none" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.6" stroke-dasharray="3,3" />
+                  <path d="M 295,150 L 445,150 Q 455,150 445,225" fill="none" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.6" stroke-dasharray="3,3" />
+
+                  <!-- 7. Central Quadrangle Lawn -->
+                  <rect x="250" y="195" width="70" height="42" rx="5" fill="rgba(46, 125, 50, 0.12)" stroke="rgba(76, 175, 80, 0.35)" stroke-width="1" />
+                  <text x="257" y="220" fill="rgba(76, 175, 80, 0.7)" font-size="7.5" font-family="monospace">CENTRAL QUAD</text>
+
+                  <!-- 8. SCTCE Building Footprints (Tactical Geometry) -->
+                  <!-- Zone 1: Main Auditorium (Darsana) -->
+                  <rect x="255" y="125" width="80" height="52" rx="4" fill="rgba(212, 175, 55, 0.12)" stroke="#d4af37" stroke-width="1.5" filter="url(#radarGoldGlow)" />
+                  <text x="263" y="146" fill="#ffffff" font-size="8.5" font-family="monospace" font-weight="bold">AUDITORIUM</text>
+                  <text x="272" y="160" fill="rgba(212, 175, 55, 0.85)" font-size="7.5" font-family="monospace">DARSANA</text>
+
+                  <!-- Zone 2: Mech & Prototyping Workshop Block -->
+                  <polygon points="160,240 248,240 248,305 160,305" fill="rgba(212, 175, 55, 0.08)" stroke="#d4af37" stroke-width="1.4" />
+                  <line x1="160" y1="262" x2="248" y2="262" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" />
+                  <line x1="160" y1="284" x2="248" y2="284" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" />
+                  <text x="168" y="255" fill="#ffffff" font-size="8.5" font-family="monospace" font-weight="bold">MECH BLOCK</text>
+                  <text x="168" y="275" fill="rgba(212, 175, 55, 0.85)" font-size="7" font-family="monospace">HACK ARENA</text>
+
+                  <!-- Zone 3: Central Computing Facility (CCF) -->
+                  <rect x="135" y="95" width="76" height="48" rx="3" fill="rgba(212, 175, 55, 0.09)" stroke="#d4af37" stroke-width="1.3" />
+                  <text x="146" y="117" fill="#ffffff" font-size="8.5" font-family="monospace" font-weight="bold">CCF / LABS</text>
+                  <text x="147" y="131" fill="rgba(212, 175, 55, 0.85)" font-size="7" font-family="monospace">CYBER & AI</text>
+
+                  <!-- Zone 4: Open Air Amphitheatre Pro-Show -->
+                  <ellipse cx="445" cy="225" rx="55" ry="40" fill="rgba(212, 175, 55, 0.06)" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="4,2" />
+                  <rect x="425" y="210" width="40" height="20" rx="3" fill="rgba(212, 175, 55, 0.22)" stroke="#d4af37" stroke-width="1" />
+                  <text x="432" y="223" fill="#ffffff" font-size="8" font-family="monospace" font-weight="bold">STAGE</text>
+                  <text x="414" y="248" fill="rgba(212, 175, 55, 0.9)" font-size="7.5" font-family="monospace">PRO-SHOW ARENA</text>
+
+                  <!-- Zone 5: Main Gate Entrance -->
+                  <rect x="92" y="55" width="36" height="20" rx="2" fill="rgba(212, 175, 55, 0.22)" stroke="#d4af37" stroke-width="1.5" />
+                  <text x="96" y="68" fill="#ffffff" font-size="7.5" font-family="monospace" font-weight="bold">GATE</text>
+                </svg>
+
+                <!-- Interactive DOM Radar Hotspot Beacons -->
+                <!-- 01: Main Auditorium -->
+                <button type="button" class="radar-beacon active" data-zone="zone-audi" style="left: 49%; top: 38%;" aria-label="Main Auditorium (Darsana)" aria-selected="true">
+                  <span class="beacon-pulse" aria-hidden="true"></span>
+                  <span class="beacon-reticle" aria-hidden="true"></span>
+                  <span class="beacon-core" aria-hidden="true"></span>
+                  <span class="beacon-label"><span class="beacon-num">01</span> Main Auditorium</span>
+                </button>
+
+                <!-- 02: Mech Workshop & Hackathon -->
+                <button type="button" class="radar-beacon" data-zone="zone-hack" style="left: 34%; top: 68%;" aria-label="Mechanical Workshop & 24h Hackathon" aria-selected="false">
+                  <span class="beacon-pulse" aria-hidden="true"></span>
+                  <span class="beacon-reticle" aria-hidden="true"></span>
+                  <span class="beacon-core" aria-hidden="true"></span>
+                  <span class="beacon-label"><span class="beacon-num">02</span> 24h Hack Arena</span>
+                </button>
+
+                <!-- 03: CCF & Tech Labs -->
+                <button type="button" class="radar-beacon" data-zone="zone-ccf" style="left: 28%; top: 30%;" aria-label="Central Computing Facility & Cyber Labs" aria-selected="false">
+                  <span class="beacon-pulse" aria-hidden="true"></span>
+                  <span class="beacon-reticle" aria-hidden="true"></span>
+                  <span class="beacon-core" aria-hidden="true"></span>
+                  <span class="beacon-label"><span class="beacon-num">03</span> CCF & Cyber Labs</span>
+                </button>
+
+                <!-- 04: Open Air Stage -->
+                <button type="button" class="radar-beacon" data-zone="zone-open" style="left: 74%; top: 56%;" aria-label="Open Air Stage & Pro-Show Arena" aria-selected="false">
+                  <span class="beacon-pulse" aria-hidden="true"></span>
+                  <span class="beacon-reticle" aria-hidden="true"></span>
+                  <span class="beacon-core" aria-hidden="true"></span>
+                  <span class="beacon-label"><span class="beacon-num">04</span> Pro-Show Ground</span>
+                </button>
+
+                <!-- 05: Main Gate Checkpoint -->
+                <button type="button" class="radar-beacon" data-zone="zone-gate" style="left: 18%; top: 16%;" aria-label="Main Gate & Registration Checkpoint" aria-selected="false">
+                  <span class="beacon-pulse" aria-hidden="true"></span>
+                  <span class="beacon-reticle" aria-hidden="true"></span>
+                  <span class="beacon-core" aria-hidden="true"></span>
+                  <span class="beacon-label"><span class="beacon-num">05</span> Main Gate & Check-in</span>
+                </button>
+              </div>
+
+              <!-- Quick Zone Selector Pills -->
+              <div class="radar-zone-pills-strip" role="tablist" aria-label="Campus Zone Navigation">
+                <button type="button" class="radar-zone-pill active" data-zone="zone-audi">01. Auditorium</button>
+                <button type="button" class="radar-zone-pill" data-zone="zone-hack">02. Hackathon Mech</button>
+                <button type="button" class="radar-zone-pill" data-zone="zone-ccf">03. CCF & Labs</button>
+                <button type="button" class="radar-zone-pill" data-zone="zone-open">04. Pro-Show Ground</button>
+                <button type="button" class="radar-zone-pill" data-zone="zone-gate">05. Main Gate</button>
+              </div>
+
+              <!-- Interactive Zone Telemetry HUD Card -->
+              <div class="radar-telemetry-card">
+                <div class="telemetry-header">
+                  <div class="telemetry-title-group">
+                    <span class="telemetry-category" id="radarZoneCategory">Keynotes & Ceremonials</span>
+                    <h3 class="telemetry-title" id="radarZoneName">Main Auditorium (Darsana)</h3>
+                  </div>
+                  <span class="telemetry-badge" id="radarZoneTag">CAPACITY: 1,000+</span>
+                </div>
+
+                <p class="telemetry-desc" id="radarZoneDesc">
+                  Central air-conditioned auditorium hosting the Grand Inauguration, Keynote Conclaves, National Tech Quiz, and the Dhyuthi 7.0 Valedictory Ceremony.
+                </p>
+
+                <div class="telemetry-highlights" id="radarZoneHighlights">
+                  <span class="radar-tag-badge">✓ Acoustic Sound Array</span>
+                  <span class="radar-tag-badge">✓ Live Stream Broadcast Rig</span>
+                  <span class="radar-tag-badge">✓ VIP & Speaker Lounge</span>
+                </div>
+
+                <div class="telemetry-footer">
+                  <div class="telemetry-meta">
+                    <span class="telemetry-walk-icon" aria-hidden="true">🚶</span>
+                    <span class="telemetry-walking" id="radarZoneWalking">2 min walk from Main Gate</span>
+                    <span class="telemetry-sep" aria-hidden="true">•</span>
+                    <span class="telemetry-coords" id="radarZoneCoords">8.4705° N, 76.9789° E</span>
+                  </div>
+                  <div class="telemetry-actions">
+                    <button type="button" class="radar-action-btn copy-btn" id="radarCopyCoordsBtn" title="Copy GPS Coordinates">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                      Copy GPS
+                    </button>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=8.4702315,76.9785765" target="_blank" rel="noopener" class="radar-action-btn nav-btn">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                      Navigate with Maps
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Subtle Copy Toast Alert -->
+                <div id="radarCopyToast" class="radar-copy-toast" aria-live="polite">✓ SCTCE GPS Coordinates Copied!</div>
+              </div>
+            </div>
+
+            <!-- Mode 2: Satellite / Real-World Hybrid View (Toggled on demand) -->
+            <div class="radar-satellite-view hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1087.1118851564481!2d76.97857658187175!3d8.470231553187036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05baee56e6b99b%3A0x4ce024c88eb0ddcb!2sSree%20Chitra%20Thirunal%20College%20of%20Engineering%2C%20Thiruvananthapuram!5e0!3m2!1sen!2sin!4v1711636446051!5m2!1sen!2sin"
+                title="Google Map location of SCTCE Trivandrum" loading="lazy" allowfullscreen>
+              </iframe>
+              <div class="satellite-overlay-bar">
+                <span>SCTCE Campus • Satellite Hybrid View</span>
+                <a href="https://maps.google.com/?q=8.4702315,76.9785765" target="_blank" rel="noopener" class="satellite-open-btn">
+                  Open Fullscreen Map ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Coordinates & Contact info -->
+          <div class="venue-info-box">
+            <div class="venue-card-item">
+              <div class="venue-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="venue-item-details">
+                <h4>Campus Address</h4>
+                <p>NH 66, CTO Colony, Pappanamcode, Thiruvananthapuram, Kerala 695018</p>
+              </div>
+            </div>
+
+            <div class="venue-card-item">
+              <div class="venue-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div class="venue-item-details">
+                <h4>Student Coordinators</h4>
+                <p>IEEE SCT SB Lead: <a href="tel:+919567694707" style="color: var(--gold-400);">+91 95676 94707</a></p>
+                <p>Convenor: <a href="tel:+918590499957" style="color: var(--gold-400);">+91 85904 99957</a></p>
+              </div>
+            </div>
+
+            <div class="venue-card-item">
+              <div class="venue-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="venue-item-details">
+                <h4>Official Email & Web</h4>
+                <p><a href="mailto:mailtoieeesctsb@gmail.com"
+                    style="color: var(--gold-400);">mailtoieeesctsb@gmail.com</a></p>
+                <p>Website: <a href="https://ieeesctsb.org" target="_blank" rel="noopener"
+                    style="color: var(--text-muted);">ieeesctsb.org</a></p>
+              </div>
+            </div>
+
+            <!-- Transit Distance Chips -->
+            <div class="venue-transit-grid">
+              <div class="transit-chip">
+                <span class="label">Trivandrum Central</span>
+                <span class="dist">6.2 KM</span>
+              </div>
+              <div class="transit-chip">
+                <span class="label">Thampanoor KSRTC</span>
+                <span class="dist">6.0 KM</span>
+              </div>
+              <div class="transit-chip">
+                <span class="label">TRV Airport</span>
+                <span class="dist">12.5 KM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trivandrum City Transit & Hospitality Telemetry (Inspired by Drishti CET) -->
+          <div class="transit-telemetry-grid">
+            <div class="transit-card">
+              <div class="transit-hub-name">🚆 Railway Transit</div>
+              <div class="transit-distance">5.2 KM</div>
+              <div class="transit-info"><strong>Trivandrum Central (TVC):</strong> Direct KSRTC city buses depart every
+                5 minutes from Thampanoor Bus Stand directly to Pappanamcode SCTCE stop.</div>
+            </div>
+
+            <div class="transit-card">
+              <div class="transit-hub-name">🚌 Inter-State Bus Hub</div>
+              <div class="transit-distance">5.1 KM</div>
+              <div class="transit-info"><strong>KSRTC Central Bus Station:</strong> Fast connection via Neyyattinkara /
+                Kanyakumari route buses right outside the station platform.</div>
+            </div>
+
+            <div class="transit-card">
+              <div class="transit-hub-name">✈️ Air Terminal</div>
+              <div class="transit-distance">9.8 KM</div>
+              <div class="transit-info"><strong>Trivandrum International (TRV):</strong> Prepaid taxi and app cabs
+                (Uber/Ola) connect directly to SCTCE in 25 minutes via NH 66.</div>
+            </div>
+
+            <div class="transit-card">
+              <div class="transit-hub-name">🏨 Outstation Stay Desk</div>
+              <div class="transit-distance">ON-CAMPUS</div>
+              <div class="transit-info"><strong>Hospitality Desk:</strong> Subsidized hostel stay and food arrangements
+                available for registered delegates from other districts & states.</div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER & IEEE SCT SB BRANDING
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Col -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-logo">
+            <img src="assets/icons/dhyuthi-logo.svg" alt="Dhyuthi 7.0 Logo" width="44" height="44">
+            <div class="brand-meta">
+              <div class="brand-title">DHYUTHI <span class="version">7.0</span></div>
+              <span class="brand-tagline">CREATE • INSPIRE • INNOVATE</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            The official portal for Dhyuthi 7.0 — the annual flagship technical festival of IEEE SCT Student Branch,
+            inspiring innovation and engineering artistry.
+          </p>
+
+          <!-- Official IEEE Logo Suite -->
+          <div class="footer-logos-suite">
+            <a href="https://ieee.org" target="_blank" rel="noopener" class="footer-logo-link"
+              title="Institute of Electrical and Electronics Engineers">
+              <img src="assets/icons/ieee-logo.svg" alt="IEEE Official Logo" height="32">
+            </a>
+            <a href="https://ieeesctsb.org" target="_blank" rel="noopener" class="footer-logo-link"
+              title="IEEE SCT Student Branch">
+              <img src="assets/icons/ieee-sctsb-logo.svg" alt="IEEE SCT SB Official Logo" height="32">
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Festival Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#about" class="footer-nav-link">About Dhyuthi 7.0</a></li>
+            <li><a href="#tracks" class="footer-nav-link">Workshops & Tracks</a></li>
+            <li><a href="#preevents" class="footer-nav-link">Pre-Events Showcase</a></li>
+            <li><a href="#schedule" class="footer-nav-link">3-Day Timeline</a></li>
+            <li><a href="#gallery" class="footer-nav-link">Event Gallery</a></li>
+            <li><a href="#tickets" class="footer-nav-link">Passes & Registration</a></li>
+          </ul>
+        </div>
+
+        <!-- IEEE SCT SB Chapters -->
+        <div>
+          <h4 class="footer-col-title">Student Branch</h4>
+          <ul class="footer-nav-list">
+            <li><a href="https://ieeesctsb.org" target="_blank" rel="noopener" class="footer-nav-link">IEEE SCT SB
+                Portal</a></li>
+            <li><a href="#tracks" class="footer-nav-link">Computer Society Chapter</a></li>
+            <li><a href="#tracks" class="footer-nav-link">Robotics & Automation Society</a></li>
+            <li><a href="#tracks" class="footer-nav-link">Women in Engineering (WIE)</a></li>
+            <li><a href="#faqs" class="footer-nav-link">KTU Points Guide</a></li>
+          </ul>
+        </div>
+
+        <!-- Social & Newsletter -->
+        <div>
+          <h4 class="footer-col-title">Connect with Us</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            Follow official channels for speaker reveals, problem statements, and registration updates.
+          </p>
+
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/ieeesctsb/" target="_blank" rel="noopener" class="footer-social-btn"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://in.linkedin.com/company/ieeesctsb" target="_blank" rel="noopener" class="footer-social-btn"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vakj3LDKLaHsJxbxMG0K" target="_blank" rel="noopener"
+              class="footer-social-btn" aria-label="WhatsApp Channel">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+            <a href="mailto:mailtoieeesctsb@gmail.com" class="footer-social-btn" aria-label="Email IEEE SCT SB">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+
+          <form class="footer-newsletter-form"
+            onsubmit="event.preventDefault(); alert('Subscribed to Dhyuthi 7.0 official updates!');">
+            <input type="email" placeholder="Enter your email" class="footer-newsletter-input" required>
+            <button type="submit" class="btn btn-gold"
+              style="padding: 0.65rem 1.1rem; font-size: 0.76rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copy-text">
+          © 2026 IEEE SCT SB • Dhyuthi 7.0. All Rights Reserved. Sree Chitra Thirunal College of Engineering.
+        </div>
+        <div style="display: flex; gap: 0.85rem; align-items: center;">
+          <button class="replay-intro-btn" data-action="replay-intro" title="Replay Dhyuthi 7.0 Intro"
+            aria-label="Replay Intro">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            Replay Intro
+          </button>
+          <button class="footer-back-to-top" id="backToTopBtn">
+            Back to top ↑
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS: REGISTRATION, PRE-EVENT DETAILS, TRACK DETAILS, LIGHTBOX
+       ========================================================================== -->
+
+  <!-- 1. Registration & Ticket Pass Checkout Modal -->
+  <div class="modal-backdrop" id="registrationModal">
+    <div class="modal-box bracket-box">
+      <div class="bracket-tl"></div>
+      <div class="bracket-tr"></div>
+      <div class="bracket-bl"></div>
+      <div class="bracket-br"></div>
+
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3>Dhyuthi 7.0 Registration</h3>
+          <p>Official Delegate Entry • IEEE SCT SB</p>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Form Container -->
+      <div id="registrationFormContainer" class="modal-scroll-body">
+        <form id="mainRegistrationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regFullName">Full Name *</label>
+              <input type="text" id="regFullName" class="form-input" placeholder="e.g. Aditi Menon" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regEmail">Email Address *</label>
+              <input type="email" id="regEmail" class="form-input" placeholder="name@college.edu" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regPhone">WhatsApp / Phone *</label>
+              <input type="tel" id="regPhone" class="form-input" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regCollege">College / Institution *</label>
+              <input type="text" id="regCollege" class="form-input" placeholder="SCTCE / College Name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regEventSelection">Pass / Event Choice *</label>
+            <select id="regEventSelection" class="form-select" required>
+              <optgroup label="Festival Passes">
+                <option value="all-access">All-Access Pass (Recommended — ₹899 / ₹719 IEEE)</option>
+                <option value="single-track">Single Track Pass (₹499 / ₹399 IEEE)</option>
+                <option value="pre-events">Pre-Events All Combo Pass (₹199 / ₹159 IEEE)</option>
+              </optgroup>
+              <optgroup label="Individual Pre-Events & Competitions">
+                <option value="trail-quest">Trail Quest 7.0 (Campus Scavenger Hunt)</option>
+                <option value="doodle-quest">DoodleQuest 7.0 (UI/UX Design Battle)</option>
+                <option value="strikezone">Strikezone 7.0 (Esports Championship)</option>
+                <option value="synapse-ideathon">Synapse Ideathon 7.0 (24h Innovation Sprint)</option>
+                <option value="prompt-arena">PromptCraft AI Duel (Generative AI Face-Off)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regKtuNo">KTU Reg No (Optional for Points)</label>
+              <input type="text" id="regKtuNo" class="form-input" placeholder="e.g. SCT23CS042">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regYear">Year / Department</label>
+              <select id="regYear" class="form-select">
+                <option value="1">1st Year Engineering</option>
+                <option value="2">2nd Year Engineering</option>
+                <option value="3">3rd Year Engineering</option>
+                <option value="4">4th Year Engineering</option>
+                <option value="other">Other / Postgraduate / Alumni</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label
+              style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; color: var(--gold-300); font-family: var(--font-mono); font-size: 0.85rem;">
+              <input type="checkbox" id="regIeeeMemberCheck">
+              I am an active IEEE Member (Apply 20% Rebate)
+            </label>
+          </div>
+
+          <div class="form-group" id="regIeeeIdGroup" style="display: none;">
+            <label class="form-label" for="regIeeeId">IEEE Membership Number</label>
+            <input type="text" id="regIeeeId" class="form-input" placeholder="8-Digit IEEE ID e.g. 98765432">
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 1rem;">
+            <button type="button" class="btn btn-glass" data-modal-close>Cancel</button>
+            <button type="submit" class="btn btn-gold" id="regSubmitBtn">Proceed to Confirmation</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success State Container (Hidden by default) -->
+      <div id="registrationSuccessContainer" class="modal-scroll-body"
+        style="display: none; text-align: center; padding: 2.5rem 1.5rem;">
+        <div style="font-size: 3.5rem; margin-bottom: 1rem;">✨</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--gold-300); margin-bottom: 0.5rem;">
+          Registration Confirmed!</h3>
+        <p
+          style="font-size: 0.95rem; color: var(--text-body); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.6;">
+          Welcome to Dhyuthi 7.0! We have dispatched your digital delegate badge and session itinerary to your registered
+          email.
+        </p>
+        <div
+          style="background: rgba(9, 8, 6, 0.85); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--gold-border); max-width: 380px; margin: 0 auto 1.5rem; font-family: var(--font-mono); font-size: 0.82rem; text-align: left;">
+          <div><strong>Delegate:</strong> <span id="confirmedName">Aditi Menon</span></div>
+          <div><strong>Order Ref:</strong> <span id="confirmedOrderRef"
+              style="color: var(--gold-400);">DHYUTHI7-84920</span></div>
+          <div><strong>Pass Tier:</strong> <span id="confirmedPassTier">All-Access Pass</span></div>
+          <div><strong>Status:</strong> <span style="color: #34d399;">Confirmed • Delegate Pass Active</span></div>
+        </div>
+        <button class="btn btn-gold" data-modal-close style="margin: 0 auto;">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Track Syllabus & Details Modal -->
+  <div class="modal-backdrop" id="trackDetailModal">
+    <div class="modal-box bracket-box">
+      <div class="bracket-tl"></div>
+      <div class="bracket-tr"></div>
+      <div class="bracket-bl"></div>
+      <div class="bracket-br"></div>
+
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3 id="trackModalTitle">Track Title</h3>
+          <p id="trackModalSub">Track Subtitle • Dhyuthi 7.0</p>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-scroll-body">
+        <p id="trackModalDesc"
+          style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--text-body);"></p>
+
+        <h4 style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--gold-300); margin-bottom: 0.75rem;">
+          Workshop Modules & Curriculum</h4>
+        <ul id="trackModalWorkshops"
+          style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; padding: 0; margin-bottom: 1.5rem;">
+        </ul>
+
+        <div
+          style="background: rgba(9,8,6,0.85); border: 1px solid rgba(212,175,55,0.2); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 2rem;">
+          <div
+            style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-400); margin-bottom: 0.35rem;">
+            <strong>KTU Accreditation:</strong> <span id="trackModalKtu">30 Activity Points</span>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <strong>Resource Faculty & Industry Leads:</strong> <span id="trackModalSpeakers">Keynote Leads</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+          <button class="btn btn-glass" data-modal-close>Close</button>
+          <a href="#tickets" class="btn btn-gold" data-modal-close>Register for this Track</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Image Lightbox Modal -->
+  <div class="lightbox-modal" id="imageLightboxModal">
+    <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav-btn prev" id="lightboxPrevBtn" aria-label="Previous image">&#10094;</button>
+    <button class="lightbox-nav-btn next" id="lightboxNextBtn" aria-label="Next image">&#10095;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg">
+      <div class="lightbox-caption-box">
+        <div id="lightboxCaptionTitle"
+          style="font-family: var(--font-serif); font-size: 1.1rem; color: #ffffff; font-weight: 700;"></div>
+        <div id="lightboxCaptionSub" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-300);">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Coordinator Module -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

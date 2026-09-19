@@ -1,0 +1,179 @@
+/* ==========================================================================
+   DYUTHI 7.0 — RESPONSIVE DESIGN & ADAPTIVE BREAKPOINTS
+   ========================================================================== */
+
+/* --- Tablets & Laptops (<= 1024px) --- */
+@media (max-width: 1024px) {
+  .primary-nav-pill {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .hero-monumental-title {
+    font-size: clamp(3rem, 8.5vw, 5.5rem);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --- Tablets (<= 768px) --- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-monumental-title {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-title-beam {
+    width: 2px;
+  }
+
+  .hero-date-badges {
+    gap: 0.5rem;
+  }
+
+  .hero-date-card {
+    width: 82px;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-actions-row .btn {
+    width: 100%;
+  }
+
+  .venue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #campusRadarContainer {
+    width: 100%;
+  }
+
+  .radar-map-wrapper {
+    aspect-ratio: 16 / 11;
+  }
+
+  .tickets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-container {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -1.5rem;
+  }
+}
+
+/* --- Small Mobile Screens (<= 480px) --- */
+@media (max-width: 480px) {
+  .tathva-brand-title {
+    font-size: 1.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-presenter-row {
+    gap: 0.8rem;
+  }
+
+  .hero-presenter-logo {
+    height: 38px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+  }
+
+  .hero-monumental-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-date-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-date-card {
+    width: 100%;
+  }
+
+  .preevents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tracks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preevent-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .subnav-pill-row {
+    justify-content: flex-start;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .radar-hud-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .radar-hud-title {
+    font-size: 0.65rem;
+  }
+
+  .beacon-label {
+    display: none;
+  }
+
+  .radar-beacon:hover .beacon-label,
+  .radar-beacon.active .beacon-label {
+    display: block;
+  }
+
+  .telemetry-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .telemetry-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

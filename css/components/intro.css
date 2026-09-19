@@ -1,0 +1,343 @@
+/* ==========================================================================
+   DYUTHI 7.0 — TATHVA-INSPIRED CHRONOMETER INTRO
+   Precision Gyroscopic Astrolabe & Circular Progress Sequence
+   High-tech, minimalist, zero boring text.
+   ========================================================================== */
+
+.tathva-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: #040403;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.tathva-intro-overlay.intro-dismissed {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+/* Ambient Background Fields */
+.tathva-intro-ambient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(246, 196, 83, 0.14) 0%, rgba(20, 16, 10, 0.5) 45%, transparent 75%);
+  pointer-events: none;
+}
+
+.tathva-intro-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8c6f3d 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Skip Button */
+.tathva-skip-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 20;
+  background: rgba(22, 17, 11, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold-200);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.tathva-skip-btn:hover {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: var(--gold-300);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.tathva-kbd-badge {
+  background: rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 4px;
+  padding: 0.08rem 0.35rem;
+  font-size: 0.6rem;
+  color: #ffffff;
+}
+
+/* Central Chronometer Assembly */
+.tathva-chronometer-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  z-index: 10;
+}
+
+.tathva-gyro-assembly {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Concentric Gyroscopic Rings */
+.tathva-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tathva-ring-outer {
+  inset: 0;
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  animation: tathvaSpinClockwise 22s linear infinite;
+}
+
+.tathva-ring-mid {
+  inset: 20px;
+  border-top: 1.5px solid rgba(246, 196, 83, 0.55);
+  border-right: 1.5px solid rgba(246, 196, 83, 0.55);
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  animation: tathvaSpinCounter 14s linear infinite;
+}
+
+.tathva-ring-inner {
+  inset: 42px;
+  border-bottom: 1.5px solid rgba(180, 130, 255, 0.5);
+  border-left: 1.5px solid rgba(180, 130, 255, 0.5);
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  animation: tathvaSpinClockwise 8s linear infinite;
+}
+
+/* Precision SVG Progress Arc */
+.tathva-progress-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.tathva-track-circle {
+  stroke: rgba(212, 175, 55, 0.15);
+}
+
+.tathva-progress-stroke {
+  stroke: #f6c453;
+  stroke-dasharray: 289.03;
+  stroke-dashoffset: 289.03;
+  filter: drop-shadow(0 0 8px rgba(246, 196, 83, 0.85));
+  transition: stroke-dashoffset 0.05s linear;
+}
+
+/* Center Logo Emblem */
+.tathva-center-emblem {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  animation: tathvaEmblemPulse 2.2s ease-in-out infinite alternate;
+}
+
+.tathva-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(246, 196, 83, 0.9)) drop-shadow(0 0 32px rgba(212, 175, 55, 0.5));
+}
+
+/* Shockwave Flash upon Completion */
+.tathva-shockwave {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(246, 196, 83, 0.65) 30%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.3);
+  transition: opacity 0.4s ease-out, transform 0.5s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.tathva-shockwave.active {
+  opacity: 0.95;
+  transform: scale(2.6);
+}
+
+/* Minimalist Typography */
+.tathva-title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.tathva-brand-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.2vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0.2rem 0 0.35rem;
+  line-height: 1.12;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #ffffff 0%, #fff1c2 22%, #f6c453 52%, #d4af37 78%, #9e7811 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(246, 196, 83, 0.65)) drop-shadow(0 0 45px rgba(212, 175, 55, 0.35));
+  animation: tathvaGoldGlow 2.8s ease-in-out infinite alternate;
+}
+
+/* Radiant Prism Needle & Celestial Horizon Arc beneath Title */
+.tathva-title-prism {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 14px;
+  margin: 0 auto 0.45rem;
+}
+
+.prism-spark {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px #ffffff, 0 0 16px #f6c453, 0 0 28px #d4af37;
+  border-radius: 1px;
+  animation: prismPulse 2s ease-in-out infinite alternate;
+}
+
+.prism-arc {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.5) 25%, rgba(255, 255, 255, 0.85) 50%, rgba(212, 175, 55, 0.5) 75%, transparent 100%);
+  box-shadow: 0 0 6px rgba(246, 196, 83, 0.4);
+}
+
+@keyframes prismPulse {
+  0% { transform: rotate(45deg) scale(0.85); box-shadow: 0 0 6px #ffffff, 0 0 14px #f6c453; }
+  100% { transform: rotate(45deg) scale(1.15); box-shadow: 0 0 12px #ffffff, 0 0 24px #f6c453, 0 0 35px #d4af37; }
+}
+
+@keyframes tathvaGoldGlow {
+  0% {
+    filter: drop-shadow(0 0 18px rgba(246, 196, 83, 0.55)) drop-shadow(0 0 35px rgba(212, 175, 55, 0.25));
+  }
+  100% {
+    filter: drop-shadow(0 0 26px rgba(246, 196, 83, 0.85)) drop-shadow(0 0 55px rgba(212, 175, 55, 0.45));
+  }
+}
+
+.tathva-telemetry-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+}
+
+.tathva-coord-tag {
+  color: var(--gold-300);
+}
+
+.tathva-pct-val {
+  color: #ffffff;
+  font-weight: 700;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Replay Button in Nav / Footer */
+.replay-intro-btn {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--gold-300);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.replay-intro-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-400);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Animations */
+@keyframes tathvaSpinClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes tathvaSpinCounter {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes tathvaEmblemPulse {
+  0% { transform: scale(0.96); opacity: 0.85; }
+  100% { transform: scale(1.04); opacity: 1; }
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  .tathva-intro-overlay {
+    transition: opacity 0.2s linear !important;
+  }
+  .tathva-ring-outer,
+  .tathva-ring-mid,
+  .tathva-ring-inner,
+  .tathva-center-emblem {
+    animation: none !important;
+  }
+}

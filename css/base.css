@@ -1,0 +1,350 @@
+/* ==========================================================================
+   DYUTHI 7.0 — BASE STYLES & CORE UTILITIES
+   Monumental Obsidian & Gold Design Architecture
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  /* Cosmic ambient obsidian depth with soft golden and amethyst optical gradients */
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(246, 196, 83, 0.10) 0%, transparent 60%),
+    radial-gradient(circle at 85% 65%, rgba(147, 72, 252, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(212, 175, 55, 0.04) 0%, transparent 45%);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* --- Fullscreen Fixed Background Canvas --- */
+.fixed-canvas-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  display: block;
+}
+
+/* --- Reference-Grade Brass & Obsidian Scrollbar --- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8c6f3d #050504;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050504;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8c6f3d;
+  border: 2px solid #050504;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* --- Container & Section Structure --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  position: relative;
+  z-index: 10;
+}
+
+section {
+  position: relative;
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  z-index: 10;
+}
+
+/* --- Typography Hierarchy --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+p {
+  color: var(--text-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.gold-gradient-text {
+  background: var(--grad-gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.35));
+}
+
+.violet-gradient-text {
+  background: linear-gradient(135deg, #c084fc 0%, #9348fc 60%, #7b3fe4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* --- Section Headers --- */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.section-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: rgba(28, 22, 14, 0.85);
+  border: 1px solid var(--gold-border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-300);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(212, 175, 55, 0.08);
+}
+
+.section-tagline::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  box-shadow: 0 0 10px var(--gold-400);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.section-desc {
+  font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Buttons & CTAs --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--gold-400);
+  outline-offset: 3px;
+}
+
+.btn-gold {
+  background: var(--gold-500);
+  color: #050504;
+  border: 1px solid var(--gold-500);
+  box-shadow: var(--shadow-gold-btn);
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  background: #fce8be;
+  border-color: #fce8be;
+  box-shadow: var(--shadow-gold-btn-hover);
+  transform: translateY(-2px);
+  color: #050504;
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-glass {
+  background: rgba(28, 22, 14, 0.85);
+  color: var(--gold-500);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.btn-glass:hover {
+  background: rgba(36, 28, 18, 0.95);
+  border-color: var(--gold-500);
+  color: var(--gold-300);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-glass-subtle {
+  background: rgba(13, 11, 8, 0.8);
+  color: var(--text-muted);
+  border: 1px solid var(--gold-800);
+}
+
+.btn-glass-subtle:hover {
+  border-color: var(--gold-500);
+  color: var(--gold-300);
+  transform: translateY(-2px);
+}
+
+/* --- Corner Bracket Utilities (HUD Aesthetics) --- */
+.bracket-box {
+  position: relative;
+}
+
+.bracket-tl,
+.bracket-tr,
+.bracket-bl,
+.bracket-br {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bracket-tl {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid var(--gold-500);
+  border-left: 2px solid var(--gold-500);
+}
+
+.bracket-tr {
+  top: 10px;
+  right: 10px;
+  border-top: 2px solid var(--gold-500);
+  border-right: 2px solid var(--gold-500);
+}
+
+.bracket-bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 2px solid var(--gold-500);
+  border-left: 2px solid var(--gold-500);
+}
+
+.bracket-br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid var(--gold-500);
+  border-right: 2px solid var(--gold-500);
+}
+
+/* --- Glassmorphic Dark Obsidian Card --- */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.glass-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+
+/* --- Reduced Motion Mode --- */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body.reduced-motion *,
+body.reduced-motion *::before,
+body.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}

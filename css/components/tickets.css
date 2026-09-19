@@ -1,0 +1,154 @@
+/* ==========================================================================
+   DYUTHI 7.0 — PASSES & TICKET SELECTOR
+   ========================================================================== */
+
+.ticket-discount-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(28, 22, 14, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 1.75rem;
+  max-width: 540px;
+  margin: 0 auto 3rem;
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.ticket-discount-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.ticket-discount-label span {
+  color: var(--gold-300);
+}
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.ticket-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-card);
+}
+
+.ticket-card:hover {
+  border-color: var(--gold-border-bright);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.ticket-card.featured {
+  background: linear-gradient(180deg, rgba(36, 28, 18, 0.95) 0%, rgba(18, 15, 11, 0.98) 100%);
+  border: 2px solid var(--gold-500);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.ticket-featured-ribbon {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-500);
+  color: #050504;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+}
+
+.ticket-tier-name {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.ticket-tier-tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.ticket-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.currency-sym {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-400);
+}
+
+.ticket-price-amount {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.ticket-per {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.ticket-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.ticket-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: var(--text-body);
+}
+
+.ticket-feature-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--gold-400);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ticket-card .btn {
+  width: 100%;
+}

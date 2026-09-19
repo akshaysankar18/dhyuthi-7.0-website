@@ -1,0 +1,567 @@
+/* ==========================================================================
+   DYUTHI 7.0 — HERO SECTION & MONUMENTAL STAGE
+   "Step into the Light" — Sacred Photonic Core & Conclave Continuum
+   ========================================================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--header-height) + 2.5rem);
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Ambient Radial Lighting */
+.hero-ambient-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 90vw);
+  height: min(600px, 60vw);
+  background: radial-gradient(circle, rgba(230, 194, 128, 0.15) 0%, rgba(147, 72, 252, 0.05) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(40px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* --- Brand Presenter Row --- */
+.hero-presenter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 0.25rem;
+  animation: heroFadeSlideDown 0.7s 0.05s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-presenter-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.35));
+  transition: transform var(--transition-normal);
+}
+
+.hero-presenter-logo:hover {
+  transform: scale(1.05);
+}
+
+.hero-dot-separator {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-700);
+  box-shadow: 0 0 8px var(--gold-500);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-serif);
+  font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  animation: fadeIn 1.2s var(--ease-smooth);
+}
+
+/* --- Monumental Title: DHYUTHI 7.0 --- */
+.hero-title-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  margin: 0.5rem auto 0;
+}
+
+.hero-title-beam {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: calc(100% + 40px);
+  background: linear-gradient(180deg, transparent 0%, rgba(243, 211, 140, 0.2) 25%, #ffffff 50%, rgba(243, 211, 140, 0.2) 75%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+  animation: pulseBeam 4s ease-in-out infinite;
+}
+
+.hero-monumental-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9.5vw, 6.75rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #fff8e8;
+  background: linear-gradient(180deg, #ffffff 0%, #fff2d6 30%, #f3d38c 60%, #aa820a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 24px rgba(243, 211, 140, 0.45));
+  animation: heroTitleMonolith 0.9s 0.2s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-monumental-title .version-chip {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  color: var(--gold-300);
+  -webkit-text-fill-color: var(--gold-300);
+  margin-left: 0.2em;
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.6));
+}
+
+/* Dhyuthi Solar Prism & Photonic Horizon Emitter */
+.hero-solar-horizon {
+  width: 100%;
+  max-width: 780px;
+  height: 56px;
+  margin: -6px auto 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.45));
+  animation: heroHorizonIgnite 1s 0.3s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 1.8vw, 1.35rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  font-weight: 600;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+  animation: heroFadeSlideUp 0.7s 0.4s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-subtagline {
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1vw, 0.9rem);
+  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  max-width: 600px;
+  margin-top: -0.25rem;
+  animation: heroFadeSlideUp 0.7s 0.5s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Dhyuthi 7.0 Tri-Phase Photonic Continuum --- */
+.hero-continuum-strip {
+  width: min(840px, 94vw);
+  background: rgba(18, 14, 9, 0.72);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.4rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  animation: heroContinuumIgnite 0.85s 0.6s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-continuum-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(243, 211, 140, 0.7), transparent);
+}
+
+.continuum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  font-family: var(--font-mono);
+  font-size: clamp(0.62rem, 1vw, 0.72rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.continuum-beacon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold-200);
+}
+
+.beacon-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  box-shadow: 0 0 10px var(--gold-400);
+  animation: beaconPulse 1.6s infinite;
+}
+
+.continuum-coords {
+  color: var(--text-muted);
+}
+
+.continuum-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.continuum-phase {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(28, 22, 14, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.3s var(--ease-smooth);
+  cursor: default;
+}
+
+.continuum-phase:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.25);
+}
+
+.phase-node-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.phase-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-300);
+  box-shadow: 0 0 6px var(--gold-400);
+}
+
+.phase-num-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+}
+
+.phase-date-block {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.phase-day {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.phase-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.phase-month {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold-300);
+}
+
+.phase-title {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Inter-phase Laser Conduit */
+.continuum-conduit {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: rgba(212, 175, 55, 0.5);
+  font-size: 0.75rem;
+}
+
+.conduit-line {
+  width: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.3), var(--gold-300), rgba(212, 175, 55, 0.3));
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
+}
+
+@keyframes beaconPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; filter: drop-shadow(0 0 8px #f3d38c); }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+@media (max-width: 680px) {
+  .continuum-timeline {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .continuum-conduit {
+    display: none;
+  }
+  .continuum-phase {
+    width: 100%;
+  }
+  .continuum-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}
+
+/* --- Hero Action CTA Row --- */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+  animation: heroFadeSlideUp 0.7s 0.75s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.btn-glass:hover .hero-btn-icon {
+  transform: scale(1.15) rotate(15deg);
+}
+
+/* --- Status & Sound Controls at Base of Hero --- */
+.hero-status-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-pill);
+  background: rgba(13, 11, 8, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  backdrop-filter: var(--glass-blur);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  animation: heroFadeSlideUp 0.7s 0.9s backwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-sound-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: var(--gold-400);
+  transition: color var(--transition-fast);
+}
+
+.hero-sound-toggle:hover {
+  color: var(--gold-200);
+}
+
+.hero-sound-waves {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+
+.hero-sound-bar {
+  width: 3px;
+  height: 100%;
+  background: var(--gold-500);
+  border-radius: 2px;
+  animation: soundBarPulse 1.2s ease-in-out infinite alternate;
+}
+
+.hero-sound-bar:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+.hero-sound-bar:nth-child(3) { animation-delay: 0.4s; height: 85%; }
+.hero-sound-bar:nth-child(4) { animation-delay: 0.1s; height: 40%; }
+
+.reduced-motion .hero-sound-bar {
+  animation: none !important;
+}
+
+/* Reduced Motion Toggle */
+.hero-reduced-motion-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.switch-ui {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.switch-ui input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #2a2218;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.switch-slider::before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text-muted);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch-ui input:checked + .switch-slider {
+  background-color: rgba(212, 175, 55, 0.35);
+  border-color: var(--gold-500);
+}
+
+.switch-ui input:checked + .switch-slider::before {
+  transform: translateX(18px);
+  background-color: var(--gold-300);
+  box-shadow: 0 0 8px var(--gold-500);
+}
+
+/* --- Choreographed In-Page Entrance Reveal (Tathva & Drishti CET Style) --- */
+@keyframes heroFadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroTitleMonolith {
+  0% {
+    opacity: 0;
+    transform: scale(0.93) translateY(24px);
+    filter: blur(8px);
+    letter-spacing: 0.14em;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+    letter-spacing: 0.08em;
+  }
+}
+
+@keyframes heroHorizonIgnite {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.75);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroContinuumIgnite {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseBeam {
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) scaleY(0.95); }
+  50% { opacity: 0.85; transform: translateX(-50%) scaleY(1.05); }
+}
+
+@keyframes soundBarPulse {
+  0% { height: 25%; }
+  100% { height: 100%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .hero-status-strip {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+  }
+}

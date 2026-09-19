@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="incGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="60%" stop-color="#f6c453"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="cardBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141724"/>
+      <stop offset="100%" stop-color="#0a0c13"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="160" rx="16" fill="url(#cardBg3)" stroke="rgba(236, 72, 153, 0.25)" stroke-width="1.5"/>
+  <circle cx="340" cy="80" r="60" fill="url(#incGrad)" opacity="0.12"/>
+  <!-- Design & UX Icon -->
+  <g transform="translate(30, 45)">
+    <circle cx="35" cy="35" r="28" fill="#1e2235" stroke="url(#incGrad)" stroke-width="2"/>
+    <polygon points="35,18 49,46 21,46" fill="none" stroke="#ec4899" stroke-width="2"/>
+    <circle cx="35" cy="33" r="6" fill="#f6c453"/>
+  </g>
+  <!-- Text -->
+  <text x="110" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="900" letter-spacing="2" fill="#ffffff">INCEPTA</text>
+  <text x="110" y="92" font-family="'Space Mono', monospace" font-size="11" font-weight="600" letter-spacing="1.5" fill="#ec4899">UI/UX • PRODUCT DESIGN • WEB3</text>
+  <text x="110" y="112" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#8d94a5">Design Thinking, Micro-interactions & Frontend Architecture</text>
+</svg>

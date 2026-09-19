@@ -1,0 +1,25 @@
+{
+  "name": "dhyuthi-7-official",
+  "version": "1.0.0",
+  "description": "Official Website for Dhyuthi 7.0 — Flagship Festival of IEEE SCT Student Branch",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "preview": "node server.js",
+    "test": "node test_server.js"
+  },
+  "keywords": [
+    "dhyuthi",
+    "dhyuthi-7",
+    "ieee",
+    "ieee-sct-sb",
+    "tech-fest",
+    "light-core",
+    "sctce",
+    "canvas-animation"
+  ],
+  "author": "IEEE SCT Student Branch",
+  "license": "MIT"
+}

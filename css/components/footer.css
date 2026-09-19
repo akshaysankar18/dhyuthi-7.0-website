@@ -1,0 +1,202 @@
+/* ==========================================================================
+   DYUTHI 7.0 — FOOTER & IEEE SCT SB BRANDING
+   ========================================================================== */
+
+.site-footer {
+  background: #030302;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+  padding: 5rem 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Brand Column */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-brand-logo img,
+.footer-brand-logo svg {
+  height: 44px;
+  width: auto;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 360px;
+}
+
+.footer-logos-suite {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.footer-logo-link img,
+.footer-logo-link svg {
+  height: 32px;
+  opacity: 0.75;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-logo-link:hover img,
+.footer-logo-link:hover svg {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Link Columns */
+.footer-col-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.footer-nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+
+.footer-nav-link:hover {
+  color: var(--gold-300);
+  transform: translateX(3px);
+}
+
+/* Social & Contact */
+.footer-social-row {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.footer-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: rgba(28, 22, 14, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-400);
+  transition: all var(--transition-fast);
+}
+
+.footer-social-btn:hover {
+  background: rgba(36, 28, 18, 0.95);
+  border-color: var(--gold-500);
+  color: var(--gold-200);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+.footer-social-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-newsletter-input {
+  flex: 1;
+  background: rgba(18, 15, 11, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.footer-newsletter-input:focus {
+  border-color: var(--gold-500);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-back-to-top {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--gold-400);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.08em;
+}
+
+.footer-back-to-top:hover {
+  color: var(--gold-200);
+}
+
+@media (max-width: 900px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,448 @@
+/* ==========================================================================
+   DYUTHI 7.0 — FESTIVAL METRICS, PRONITE, AMBASSADOR & TRANSIT STYLES
+   Inspired by Techfest IIT Bombay, Tathva NIT Calicut & Drishti CET
+   ========================================================================== */
+
+/* --- 1. FESTIVAL SCALE & IMPACT METRICS STRIP --- */
+.festival-metrics-section {
+  padding: 3rem 0;
+  position: relative;
+  z-index: 5;
+}
+
+.metrics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.metrics-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.metrics-header-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  color: var(--gold-300);
+  text-transform: uppercase;
+}
+
+.metrics-subtag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.14em;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.metric-card {
+  background: rgba(22, 18, 12, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-400), transparent);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.metric-val {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #f7dc8d 45%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 16px rgba(212, 175, 55, 0.3);
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--gold-200);
+  text-transform: uppercase;
+}
+
+.metric-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* --- 2. LIVE EVENT SEARCH & CATEGORY FILTER BAR --- */
+.event-filter-nexus {
+  width: 100%;
+  background: rgba(18, 14, 9, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+.filter-search-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  min-width: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-svg {
+  position: absolute;
+  left: 14px;
+  color: var(--gold-400);
+  pointer-events: none;
+}
+
+.event-search-input {
+  width: 100%;
+  background: rgba(9, 8, 6, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-pill);
+  padding: 0.7rem 1rem 0.7rem 2.8rem;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.event-search-input:focus {
+  outline: none;
+  border-color: var(--gold-400);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.35);
+  background: rgba(18, 14, 9, 0.95);
+}
+
+.filter-results-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.filter-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-chip-btn {
+  background: rgba(28, 22, 14, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth);
+}
+
+.filter-chip-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-400);
+  color: var(--gold-200);
+}
+
+.filter-chip-btn.active {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(140, 111, 61, 0.4));
+  border-color: var(--gold-400);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+/* --- 3. PRONITE & PRO-SHOW SPOTLIGHT STAGE ("CRESCENDO 7.0") --- */
+.pronite-section {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 30%, rgba(147, 72, 252, 0.08) 0%, rgba(212, 175, 55, 0.08) 35%, transparent 70%);
+}
+
+.pronite-stage-card {
+  background: linear-gradient(135deg, rgba(24, 18, 12, 0.88) 0%, rgba(12, 10, 8, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+.pronite-stage-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffffff, var(--gold-400), transparent);
+}
+
+.pronite-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.pronite-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.28em;
+  color: var(--gold-300);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.pronite-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #f7dc8d 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.pronite-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pronite-badge {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold-200);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.pronite-desc {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.pronite-visual-box {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
+}
+
+.pronite-visual-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.pronite-stage-card:hover .pronite-visual-box img {
+  transform: scale(1.05);
+}
+
+.pronite-audio-waves {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 32px;
+  padding: 6px 10px;
+  background: rgba(9, 8, 6, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+}
+
+.sound-bar-anim {
+  width: 3px;
+  background: var(--gold-300);
+  border-radius: 2px;
+  animation: soundDance 1.2s infinite ease-in-out;
+}
+
+.sound-bar-anim:nth-child(1) { height: 10px; animation-delay: 0.1s; }
+.sound-bar-anim:nth-child(2) { height: 22px; animation-delay: 0.3s; }
+.sound-bar-anim:nth-child(3) { height: 16px; animation-delay: 0.2s; }
+.sound-bar-anim:nth-child(4) { height: 26px; animation-delay: 0.4s; }
+.sound-bar-anim:nth-child(5) { height: 14px; animation-delay: 0.15s; }
+
+@keyframes soundDance {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+/* --- 4. CAMPUS AMBASSADOR PROGRAM BANNER --- */
+.ambassador-section {
+  padding: 3rem 0;
+  position: relative;
+  z-index: 5;
+}
+
+.ambassador-card {
+  background: linear-gradient(135deg, rgba(28, 22, 14, 0.85) 0%, rgba(16, 13, 9, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.12);
+}
+
+.ambassador-content {
+  max-width: 620px;
+}
+
+.ambassador-perks-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.ambassador-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold-200);
+  background: rgba(9, 8, 6, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+/* --- 5. TRANSIT & ARRIVAL TELEMETRY (VENUE ENHANCEMENT) --- */
+.transit-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.transit-card {
+  background: rgba(18, 14, 9, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.transit-card:hover {
+  border-color: var(--gold-400);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(212, 175, 55, 0.2);
+}
+
+.transit-hub-name {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-200);
+  text-transform: uppercase;
+}
+
+.transit-distance {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.transit-info {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 860px) {
+  .pronite-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="synkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="60%" stop-color="#9d5bf0"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="cardBg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141724"/>
+      <stop offset="100%" stop-color="#0a0c13"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="160" rx="16" fill="url(#cardBg4)" stroke="rgba(59, 130, 246, 0.25)" stroke-width="1.5"/>
+  <circle cx="340" cy="80" r="60" fill="url(#synkGrad)" opacity="0.12"/>
+  <!-- Cyber & Cloud Security Icon -->
+  <g transform="translate(30, 45)">
+    <circle cx="35" cy="35" r="28" fill="#1e2235" stroke="url(#synkGrad)" stroke-width="2"/>
+    <path d="M 35 20 L 47 25 L 47 37 C 47 45 35 50 35 50 C 35 50 23 45 23 37 L 23 25 Z" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="35" cy="33" r="3" fill="#9d5bf0"/>
+  </g>
+  <!-- Text -->
+  <text x="110" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="900" letter-spacing="2" fill="#ffffff">SYNKRON</text>
+  <text x="110" y="92" font-family="'Space Mono', monospace" font-size="11" font-weight="600" letter-spacing="1.5" fill="#3b82f6">CYBERSECURITY • CLOUD • DEVOPS</text>
+  <text x="110" y="112" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#8d94a5">Ethical Hacking, Distributed Infrastructure & Cloud Native</text>
+</svg>

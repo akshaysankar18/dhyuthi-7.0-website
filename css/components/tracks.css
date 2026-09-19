@@ -1,0 +1,173 @@
+/* ==========================================================================
+   DYUTHI 7.0 — TRACKS & WORKSHOPS
+   Flagship Technical Disciplines Curated by IEEE SCT SB
+   ========================================================================== */
+
+.tracks-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.track-filter-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(18, 15, 11, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.track-filter-btn:hover {
+  color: var(--gold-200);
+  border-color: rgba(212, 175, 55, 0.5);
+  background: rgba(36, 28, 18, 0.9);
+}
+
+.track-filter-btn.active {
+  color: #050504;
+  background: var(--gold-500);
+  border-color: var(--gold-500);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.track-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.track-card:hover {
+  border-color: var(--gold-border-bright);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.track-card:hover::before {
+  opacity: 1;
+}
+
+.track-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.track-badge-img {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  background: rgba(9, 8, 6, 0.8);
+  padding: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.track-tag-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  background: rgba(9, 8, 6, 0.85);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.track-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.track-sub {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--gold-400);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.track-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.track-highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  padding: 0;
+}
+
+.track-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  color: var(--text-body);
+}
+
+.track-highlight-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--gold-400);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.track-footer-action {
+  margin-top: auto;
+}
+
+.track-footer-action .btn {
+  width: 100%;
+}

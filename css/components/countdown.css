@@ -1,0 +1,316 @@
+/**
+ * DHYUTHI 7.0 — SOLAR CHRONOMETER (COUNTDOWN TIMER)
+ * Luxury Obsidian & Molten Gold Glassmorphic Chronometer
+ */
+
+.hero-countdown-container {
+  width: min(780px, 94vw);
+  margin: 1.25rem auto 0.75rem;
+  background: rgba(18, 14, 9, 0.78);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-lg, 16px);
+  padding: 1.25rem 1.75rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(212, 175, 55, 0.12);
+  position: relative;
+  z-index: 5;
+  animation: heroFadeSlideUp 0.8s 0.35s backwards cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-countdown-container:hover {
+  border-color: rgba(243, 211, 140, 0.55);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.22);
+}
+
+/* Atmospheric Top Badge */
+.countdown-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-200, #fce8be);
+  margin-bottom: 1.1rem;
+  text-transform: uppercase;
+}
+
+.countdown-beacon-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ffaa;
+  box-shadow: 0 0 10px #00ffaa, 0 0 18px rgba(0, 255, 170, 0.6);
+  animation: beaconPulse 2s infinite ease-in-out;
+}
+
+.countdown-badge-separator {
+  color: rgba(212, 175, 55, 0.4);
+}
+
+.countdown-badge-date {
+  color: var(--gold-400, #d4af37);
+  font-weight: 600;
+}
+
+/* 4-Pod Chronometer Grid */
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Individual Chronometer Unit Pod */
+.countdown-card {
+  flex: 1;
+  min-width: 0;
+  max-width: 140px;
+}
+
+.countdown-card-inner {
+  position: relative;
+  background: linear-gradient(180deg, rgba(32, 24, 15, 0.85) 0%, rgba(14, 10, 6, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-md, 12px);
+  padding: 0.9rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.countdown-card:hover .countdown-card-inner {
+  transform: translateY(-2px);
+  border-color: rgba(243, 211, 140, 0.6);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15), 0 12px 28px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Astrolabe Corner Tech Brackets */
+.countdown-corner-bracket {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: var(--gold-400, #d4af37);
+  pointer-events: none;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
+}
+
+.countdown-card:hover .countdown-corner-bracket {
+  opacity: 1;
+}
+
+.countdown-corner-bracket.tl {
+  top: 4px;
+  left: 4px;
+  border-top: 1.5px solid var(--gold-400, #d4af37);
+  border-left: 1.5px solid var(--gold-400, #d4af37);
+}
+
+.countdown-corner-bracket.tr {
+  top: 4px;
+  right: 4px;
+  border-top: 1.5px solid var(--gold-400, #d4af37);
+  border-right: 1.5px solid var(--gold-400, #d4af37);
+}
+
+.countdown-corner-bracket.bl {
+  bottom: 4px;
+  left: 4px;
+  border-bottom: 1.5px solid var(--gold-400, #d4af37);
+  border-left: 1.5px solid var(--gold-400, #d4af37);
+}
+
+.countdown-corner-bracket.br {
+  bottom: 4px;
+  right: 4px;
+  border-bottom: 1.5px solid var(--gold-400, #d4af37);
+  border-right: 1.5px solid var(--gold-400, #d4af37);
+}
+
+/* Number Value Display */
+.countdown-value-wrap {
+  position: relative;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.countdown-number {
+  font-family: var(--font-display, "Space Grotesk", sans-serif);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(180deg, #ffffff 0%, #fff2d6 25%, #f3d38c 65%, #aa820a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 14px rgba(243, 211, 140, 0.4));
+  display: inline-block;
+  transition: transform 0.15s ease-out;
+}
+
+.countdown-number.tick {
+  transform: scale(1.06);
+}
+
+/* Label Below Number */
+.countdown-label {
+  font-family: var(--font-mono, monospace);
+  font-size: clamp(0.62rem, 1vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--gold-300, #f3d38c);
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Pulsing Colon Divider */
+.countdown-divider {
+  font-family: var(--font-display, "Space Grotesk", sans-serif);
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold-400, #d4af37);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+  margin-top: -0.85rem;
+  user-select: none;
+  animation: colonGlowPulse 1s infinite alternate ease-in-out;
+}
+
+/* Footer Action: Add to Calendar Link */
+.countdown-footer-row {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.countdown-calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-200, #fce8be);
+  background: rgba(212, 175, 55, 0.07);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.countdown-calendar-btn:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--gold-300, #f3d38c);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+.countdown-calendar-btn svg {
+  stroke: var(--gold-300, #f3d38c);
+  transition: transform 0.2s ease;
+}
+
+.countdown-calendar-btn:hover svg {
+  transform: scale(1.15);
+}
+
+/* Animations */
+@keyframes colonGlowPulse {
+  0% {
+    opacity: 0.35;
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 16px rgba(255, 230, 150, 0.9);
+  }
+}
+
+@keyframes beaconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .hero-countdown-container {
+    padding: 1rem 0.85rem;
+    margin: 1rem auto 0.5rem;
+  }
+
+  .countdown-badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  .countdown-grid {
+    gap: 0.35rem;
+  }
+
+  .countdown-card-inner {
+    padding: 0.7rem 0.35rem;
+  }
+
+  .countdown-number {
+    font-size: 1.6rem;
+  }
+
+  .countdown-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .countdown-divider {
+    font-size: 1.3rem;
+    margin-top: -0.65rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .countdown-grid {
+    gap: 0.2rem;
+  }
+
+  .countdown-number {
+    font-size: 1.35rem;
+  }
+
+  .countdown-label {
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+  }
+
+  .countdown-divider {
+    font-size: 1.1rem;
+  }
+}
+
+/* Reduced Motion Support */
+body.reduced-motion .hero-countdown-container,
+body.reduced-motion .countdown-divider,
+body.reduced-motion .countdown-beacon-dot {
+  animation: none !important;
+  transition: none !important;
+}

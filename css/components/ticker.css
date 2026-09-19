@@ -1,0 +1,145 @@
+/* ==========================================================================
+   DYUTHI 7.0 — LIVE ANNOUNCEMENT TICKER
+   Obsidian Matrix & Molten Gold Live Telemetry Marquee
+   ========================================================================== */
+
+.ticker-section {
+  padding: 0.9rem 0;
+  background: rgba(9, 8, 6, 0.95);
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  position: relative;
+  z-index: 20;
+}
+
+.ticker-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold-300);
+  white-space: nowrap;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.ticker-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  box-shadow: 0 0 10px var(--gold-500);
+  animation: tickerDotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes tickerDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.7); opacity: 0.4; }
+}
+
+.ticker-marquee-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.ticker-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.ticker-marquee-track:hover,
+.ticker-marquee-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Individual Ticker Pill */
+.ticker-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(28, 22, 14, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.ticker-pill-item:hover {
+  background: rgba(36, 28, 18, 0.95);
+  border-color: var(--gold-500);
+  color: var(--gold-200);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.25);
+  transform: translateY(-1px);
+}
+
+.ticker-pill-icon {
+  color: var(--gold-400);
+  font-size: 0.95rem;
+}
+
+.ticker-pill-arrow {
+  color: var(--gold-600);
+  font-weight: 700;
+  transition: transform var(--transition-fast);
+}
+
+.ticker-pill-item:hover .ticker-pill-arrow {
+  transform: translateX(3px);
+  color: var(--gold-400);
+}
+
+.ticker-ctrl-btn {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-sm);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--gold-400);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.ticker-ctrl-btn:hover {
+  border-color: var(--gold-500);
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-200);
+}
+
+.ticker-ctrl-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
