@@ -3,6 +3,16 @@
 **IEEE SCT Student Branch Flagship Technical & Cultural Festival**  
 *Sree Chitra Thirunal College of Engineering (SCTCE), Trivandrum, Kerala*
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://dhyuthi-7website.netlify.app/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akshaysankar18/dhyuthi-7.0-website)
+
+---
+
+## 🔗 Live Links
+
+- **🌐 Live Website:** [https://dhyuthi-7website.netlify.app/](https://dhyuthi-7website.netlify.app/)
+- **💻 GitHub Repository:** [https://github.com/akshaysankar18/dhyuthi-7.0-website](https://github.com/akshaysankar18/dhyuthi-7.0-website)
+
 ---
 
 ## 🌟 Executive Summary
@@ -81,8 +91,8 @@ No compilation or complex bundler installation is required.
 ### Method 1: Using npx / Node.js
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/dhyuthi-7-official.git
-cd dhyuthi-7-official
+git clone https://github.com/akshaysankar18/dhyuthi-7.0-website.git
+cd dhyuthi-7.0-website
 
 # Start local development server
 npm run dev
@@ -98,26 +108,24 @@ Open [http://localhost:8000](http://localhost:8000).
 
 ---
 
-## 🌐 Free Hosting Deployment Guide
+## 🌐 Deployment & Live Site
 
-### GitHub Pages (Recommended)
-1. Push this repository to GitHub as a **public** repository.
-2. Navigate to **Settings** > **Pages**.
-3. Under **Build and deployment** > **Branch**, select `main` (or `master`) and folder `/ (root)`.
-4. Click **Save**. Within 60 seconds, your site will be live at:
-   `https://<your-username>.github.io/<repository-name>/`
+The project is hosted and continuously deployed via Netlify:
 
-### Vercel / Netlify
-- Simply import your GitHub repository into Vercel or Netlify.
-- Framework preset: `Other` (Static HTML).
-- Build command: *leave empty*.
-- Output directory: *leave empty or `.`*.
-- Deploy instantly with SSL enabled.
+- **🚀 Live Website:** [https://dhyuthi-7website.netlify.app/](https://dhyuthi-7website.netlify.app/)
+- **📦 GitHub Repository:** [https://github.com/akshaysankar18/dhyuthi-7.0-website](https://github.com/akshaysankar18/dhyuthi-7.0-website)
+
+### Deployment Configuration (Netlify / Static Hosting)
+- **Framework preset:** `Other` (Static HTML)
+- **Build command:** *none*
+- **Publish directory:** `.`
+- **SSL:** Enabled by default
 
 ---
 
 ## 📄 Submission Checklist
-- [x] Public GitHub repository with clean modular architecture
+- [x] Public GitHub repository: [akshaysankar18/dhyuthi-7.0-website](https://github.com/akshaysankar18/dhyuthi-7.0-website)
+- [x] Live Netlify deployment: [dhyuthi-7website.netlify.app](https://dhyuthi-7website.netlify.app/)
 - [x] "Doc" folder containing all 5 comprehensive system design documents
 - [x] High-fidelity Light Core interactive canvas & hero match
 - [x] Pre-events showcase with real posters and registration flows
